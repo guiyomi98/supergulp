@@ -7,6 +7,7 @@ import del from "del"
 import webserver from "gulp-webserver"
 import image from "gulp-image"
 import autoprefixer from "gulp-autoprefixer"
+import minify from "gulp-minify"
 
 const sass = require('gulp-sass')(require('sass'));
 
@@ -43,8 +44,15 @@ const styles = () =>
     .src("src/scss/styles.scss")
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
+    .pipe(minify({
+        ext:{
+            src:'-debug.js',
+            min:'.js'
+        },
+        exclude: ['tasks'],
+        ignoreFiles: ['.combo.js', '-min.js']
+    }))
     .pipe(gulp.dest("dist/assets/stylesheets/styles.css"))
-
 
 // clean
 const clean = () => del(["dist"])
