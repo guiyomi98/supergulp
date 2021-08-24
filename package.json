@@ -27,7 +27,10 @@
     "web",
     "development"
   ],
-  "author": "guiyomi98@gmail.com",
+  "author": {
+    "name": "guiyomi98",
+    "email": "guiyomi98@gmail.com"
+  },
   "license": "ISC",
   "script": {
     "dev": "gulp dev",
