@@ -1,13 +1,13 @@
 'use strict';
 
-// node module
-import gulp from "gulp"
-import pug from "gulp-pug"
-import del from "del"
+// Load node module
+import gulp      from "gulp"
+import pug       from "gulp-pug"
+import del       from "del"
 import webserver from "gulp-webserver"
-import image from "gulp-image"
-import autoprefixer from "gulp-autoprefixer"
-import minify from "gulp-minify"
+import image     from "gulp-image"
+import autopf    from "gulp-autoprefixer"
+import minify    from "gulp-minify"
 
 const sass = require('gulp-sass')(require('sass'));
 
@@ -18,12 +18,23 @@ const paths = {
     dist: "dist",
     watch: "src/**/*.pug"
   },
+  font: {
+    src: "src/fonts/*",
+    dist: "dist/assets/fonts/"
+  },
   img: {
     src: "src/images/*",
-    dist: "dist/assets/img"
+    dist: "dist/assets/images"
+  },
+  scss: {
+    src: "src/scss/*.scss",
+    dist: "dist/assets/stylesheets/"
   }
 }
 
+/*
+ * tasks
+ */
 // htmls
 const pugs = () => 
   gulp
@@ -41,18 +52,18 @@ const imgs = () =>
 // scss
 const styles = () => 
   gulp
-    .src("src/scss/styles.scss")
+    .src(paths.scss.src)
     .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer())
-    .pipe(minify({
-        ext:{
-            src:'-debug.js',
-            min:'.js'
-        },
-        exclude: ['tasks'],
-        ignoreFiles: ['.combo.js', '-min.js']
+    .pipe(autopf({
+      "overrideBrowserslist": ["last 2 versions"]
     }))
-    .pipe(gulp.dest("dist/assets/stylesheets/styles.css"))
+    .pipe(gulp.dest(paths.scss.dist))
+
+// fonts
+const fonts = () =>
+  gulp
+    .src(paths.font.src)
+    .pipe(gulp.dest(paths.font.dist))
 
 // clean
 const clean = () => del(["dist"])
@@ -61,7 +72,7 @@ const clean = () => del(["dist"])
 const watch = () => {
   gulp.watch(paths.html.watch, pugs)
   // gulp.watch(paths.img.watch, imgs)
-  gulp.watch('src/scss/*.scss', styles)
+  gulp.watch(paths.scss.src , styles)
 }
 
 // webserver
@@ -73,12 +84,11 @@ const server = () =>
       open: true
     }))
 
-
-const prepare = gulp.series([clean, imgs])
-
+/*
+ * running tasks
+ */
+const prepare = gulp.parallel([clean, imgs, fonts])  // before task
 const assets = gulp.series([pugs, styles])
+const post = gulp.series([server, watch])   // after task
 
-const post = gulp.series([server, watch])
-
-// develop oreder
-export const dev = gulp.series([assets, post])
+export const dev = gulp.series([prepare, assets, post])
