@@ -1,19 +1,17 @@
-/*!
- * 
- * Copyright 2021 guiyomi98@gmail.com
- * Licensed under MIT 
- */
-
 // Core variables and mixins
-@import "reset";
 @import "variables";
+@import "mixins";
 
 // Reset and dependencies
+@import "normalize";
+@import "reset";
 
 // Core CSS
+@import "scaffolding";
 
 // Components
 
 // Components w/ JavaScript
 
 // Utility classes
+@import "utilities";

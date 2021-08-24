@@ -1,0 +1,35 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+// Import the fonts
+@at-root {
+    @font-face {
+        font-family: "SpoqaHanSansNeo";
+        src: url();
+    }
+}
+
+// Reset the box-sizing
+* {
+    @include box-sizing(border-box);
+  }
+  *:before,
+  *:after {
+    @include box-sizing(border-box);
+  }
+  
+  
+  // Body reset
+  html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $text-color;
+    background-color: $body-bg;
+  }
+  

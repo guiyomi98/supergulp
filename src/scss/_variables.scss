@@ -1,3 +1,4 @@
+$sass-asset-helper: false !default;
 //
 // Variables
 // --------------------------------------------------
@@ -59,6 +60,3 @@ $headings-font-family:    inherit !default;
 $headings-font-weight:    400 !default;
 $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
-
-
-html {color: $black; display: flex;}
