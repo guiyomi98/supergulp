@@ -20,7 +20,7 @@ const paths = {
   },
   font: {
     src: "src/fonts/*",
-    dist: "dist/assets/fonts/"
+    dist: "dist/assets/fonts"
   },
   img: {
     src: "src/images/*",
