@@ -15,7 +15,7 @@ Gulp는 Node.js 기반의 프로세스 자동화 도구이며 MIT 라이센스�
 ``` js
 npm install
 ```
-> :blossom:NOTE| vscode 사용 권한 거부 시 해당 포스팅 확인: https://dog-developers.tistory.com/183
+> :blossom:*NOTE* | vscode 사용 권한 거부 시 해당 포스팅 확인: https://dog-developers.tistory.com/183
 
 ## Run
 gulpfile.babel.js 환경 실행
