@@ -7,11 +7,15 @@ html(lang="ko")
         title My Site - #{title}
         link(rel="shortcut icon", href="#")
         link(rel="stylesheet", type="text/css", href="/assets/stylesheets/styles.css")
-    body 
-        include ../particles/header
+    body
+        .wrapper
+            include ../particles/header
 
-        block content
+            section.container
+                h2.invisible
 
-        include ../particles/footer
+            include ../particles/footer
 
-        //- script(src="js/main.js") 
+            include ../particles/gnb
+
+            //- script(src="js/main.js") 

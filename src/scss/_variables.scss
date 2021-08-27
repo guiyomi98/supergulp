@@ -45,10 +45,15 @@ $link-hover-decoration: none !default;
 
 $font-family-base: 'Spoqa Han Sans Neo', 'Malgun Gothic', '맑은 고딕', Helvetica, Arial, sans-serif !default;
 
+//** Font size
 $font-size-base:          14px !default;
-
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * .85)) !default; // ~12px
+
+//** Font weight
+$font-weight-base:        400 !default;
+$font-weight-medium:      500 !default;
+$font-weight-Bold:        700 !default;
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.1 !default;
