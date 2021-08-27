@@ -7,7 +7,8 @@ import del             from "del"
 import webserver       from "gulp-webserver"
 import image           from "gulp-image"
 import autoprefixer    from "gulp-autoprefixer"
-import minicss         from "gulp-csso";
+import minicss         from "gulp-csso"
+import ghpages         from "gulp-gh-pages"
 
 const sass = require('gulp-sass')(require('sass'));
 
@@ -65,7 +66,7 @@ const fonts = () =>
     .pipe(gulp.dest(paths.font.dist))
 
 // clean
-const clean = () => del(["dist"])
+const clean = () => del(["dist", ".publish"])
 
 // watch
 const watch = () => {
@@ -73,6 +74,12 @@ const watch = () => {
   // gulp.watch(paths.img.watch, imgs)
   gulp.watch(paths.scss.src , styles)
 }
+
+const pages = () =>
+  gulp
+    .src("dist/**/*")
+    .pipe(ghpages())
+
 
 // webserver
 const server = () => 
@@ -86,8 +93,10 @@ const server = () =>
 /*
  * running tasks
  */
-const prepare = gulp.parallel([clean, imgs, fonts])  // before task
+const prepare = gulp.parallel([clean, imgs, fonts]) //before task
 const assets = gulp.series([pugs, styles])
-const post = gulp.series([server, watch])   // after task
+const live = gulp.series([server, watch]) //after task
 
-export const dev = gulp.series([prepare, assets, post])
+export const dev = gulp.series([prepare, assets, live])
+export const build = gulp.series([prepare, assets])
+export const deploy = gulp.series([build, pages, clean])
