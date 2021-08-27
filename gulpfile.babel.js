@@ -1,13 +1,13 @@
 'use strict';
 
 // Load node module
-import gulp      from "gulp"
-import pug       from "gulp-pug"
-import del       from "del"
-import webserver from "gulp-webserver"
-import image     from "gulp-image"
-import autopf    from "gulp-autoprefixer"
-import minify    from "gulp-minify"
+import gulp            from "gulp"
+import pug             from "gulp-pug"
+import del             from "del"
+import webserver       from "gulp-webserver"
+import image           from "gulp-image"
+import autoprefixer    from "gulp-autoprefixer"
+import minicss         from "gulp-csso";
 
 const sass = require('gulp-sass')(require('sass'));
 
@@ -54,9 +54,8 @@ const styles = () =>
   gulp
     .src(paths.scss.src)
     .pipe(sass().on('error', sass.logError))
-    .pipe(autopf({
-      "overrideBrowserslist": ["last 2 versions"]
-    }))
+    .pipe(autoprefixer({"overrideBrowserslist": ["last 2 versions"]}))
+    .pipe(minicss())
     .pipe(gulp.dest(paths.scss.dist))
 
 // fonts
