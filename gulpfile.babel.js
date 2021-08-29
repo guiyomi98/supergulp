@@ -1,6 +1,6 @@
 'use strict';
 
-// Load node module
+//Load node module
 import gulp            from "gulp"
 import pug             from "gulp-pug"
 import del             from "del"
@@ -12,7 +12,7 @@ import ghpages         from "gulp-gh-pages"
 
 const sass = require('gulp-sass')(require('sass'));
 
-// directory
+//directory
 const paths = {
   html: {
     src: "src/*.pug",
@@ -36,21 +36,21 @@ const paths = {
 /*
  * tasks
  */
-// htmls
+//htmls
 const htmls = () => 
   gulp
     .src(paths.html.src)
     .pipe(pug())
     .pipe(gulp.dest(paths.html.dist))
 
-// images
+//images
 const imgs = () => 
   gulp
     .src(paths.img.src)
     .pipe(image())
     .pipe(gulp.dest(paths.img.dist))
 
-// scss
+//scss
 const styles = () => 
   gulp
     .src(paths.scss.src)
@@ -59,29 +59,29 @@ const styles = () =>
     .pipe(minicss())
     .pipe(gulp.dest(paths.scss.dist))
 
-// fonts
+//fonts
 const fonts = () =>
   gulp
     .src(paths.font.src)
     .pipe(gulp.dest(paths.font.dist))
 
-// clean
+//clean
 const clean = () => del(["dist", ".publish"])
 
-// watch
+//watch
 const watch = () => {
   gulp.watch(paths.html.watch, htmls)
-  // gulp.watch(paths.img.watch, imgs)
+  gulp.watch(paths.img.watch, imgs)
   gulp.watch(paths.scss.src , styles)
 }
 
+//deploy
 const pages = () =>
   gulp
     .src("dist/**/*")
     .pipe(ghpages())
 
-
-// webserver
+//webserver
 const server = () => 
   gulp
     .src("dist")
