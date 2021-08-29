@@ -1,21 +1,13 @@
-doctype html
-html(lang="ko")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title My Site - #{title}
-        link(rel="shortcut icon", href="#")
-        link(rel="stylesheet", href="/assets/stylesheets/styles.css", type="text/css")
-    body
-        .wrapper
-            include ../particles/header
+include ../particles/head
+body
+    .wrapper
+        include ../particles/header
 
-            section.container
-                h2.invisible
+        section.container
+            h2.invisible
 
-            include ../particles/footer
+        include ../particles/footer
 
-            include ../particles/gnb
+        include ../particles/gnb
 
-            //- script(src="js/main.js") 
+        //- script(src="js/main.js") 
