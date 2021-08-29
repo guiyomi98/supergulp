@@ -37,7 +37,7 @@ const paths = {
  * tasks
  */
 // htmls
-const pugs = () => 
+const htmls = () => 
   gulp
     .src(paths.html.src)
     .pipe(pug())
@@ -70,7 +70,7 @@ const clean = () => del(["dist", ".publish"])
 
 // watch
 const watch = () => {
-  gulp.watch(paths.html.watch, pugs)
+  gulp.watch(paths.html.watch, htmls)
   // gulp.watch(paths.img.watch, imgs)
   gulp.watch(paths.scss.src , styles)
 }
@@ -93,10 +93,10 @@ const server = () =>
 /*
  * running tasks
  */
-const prepare = gulp.parallel([clean, imgs, fonts]) //before task
-const assets = gulp.series([pugs, styles])
-const live = gulp.series([server, watch]) //after task
+const resourece = gulp.series([clean, imgs, fonts]),
+      assets    = gulp.parallel([htmls, styles]),
+      live      = gulp.parallel([server, watch])
 
-export const dev = gulp.series([prepare, assets, live])
-export const build = gulp.series([prepare, assets])
+export const dev = gulp.series([resourece, assets, live])
+export const build = gulp.series([resourece, assets])
 export const deploy = gulp.series([build, pages, clean])
