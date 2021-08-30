@@ -1,0 +1,22 @@
+//
+// Media query
+// --------------------------------------------------
+
+//iPhone 5 이하
+@media only screen and (max-width:320px) {
+  html{
+    font-size: 80%;
+  }
+}
+//Tablet(세로)
+@media only screen and (min-width:748px) and (orientation:portrait) {
+  html{
+    font-size: 120%;
+  }
+}
+//Tablet
+@media only screen and (min-width:920px) {
+  html{
+    font-size: 120%;
+  }
+}
