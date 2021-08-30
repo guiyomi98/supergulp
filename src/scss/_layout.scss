@@ -1,0 +1,23 @@
+//
+// Layout
+// --------------------------------------------------
+
+.wrapper {
+    position: relative;
+    padding-top: 4.5rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 4.5rem;
+    border-bottom: 1px solid $gray-lighter;
+    .title {
+        flex: 1;
+        text-align: center;
+    }
+}
