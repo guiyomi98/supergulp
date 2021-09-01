@@ -1,18 +1,30 @@
-include ../particles/head
-body
-    .wrapper
-        include ../particles/header
+doctype html
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title My Site - #{title}
+        link(rel="shortcut icon", href="#")
+        link(rel="stylesheet", href="/assets/stylesheets/styles.css", type="text/css")
+    body
+        .wrapper
+            include ../particles/header
 
-        section.container
-            h2.invisible
-            article.section 
-                h3.title 타이틀 테스트
-                ul.tab
-                    li 이게 뭐냐냐냐 테스트테스트
-                    li 테스트
+            section.container
+                h2.invisible main page
+                article.section
+                    h3.title 서브 타이틀 테스트
+                    ul.tab
+                        //- - for (var x = 0; x < 3; x++)
+                        //-     li.tab__item 탭
+                        - var list = ["전체", "즐겨찾기", "3개월실적", "추천상품"]
+                        each item in list
+                            li.tab__item= item
 
-        include ../particles/footer
 
-        include ../particles/gnb
+            include ../particles/footer
 
-        //- script(src="js/main.js") 
+            include ../particles/gnb
+
+            //- script(src="js/main.js")

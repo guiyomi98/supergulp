@@ -4,7 +4,6 @@
 
 /* Layout */
 .wrapper {
-    position: relative;
     height: 100%;
     padding: $layout-height 0;
 }
@@ -26,8 +25,16 @@
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     // background-color: $gray-light;
+}
+
+.section {
+    .title {
+        font-size: $font-size-medium;
+    }
 }
 
 .footer {
