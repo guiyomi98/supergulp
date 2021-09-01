@@ -2,40 +2,7 @@
 // Scaffolding
 // --------------------------------------------------
 
-/* Import the fonts */
-@at-root {
-  @font-face {
-      font-family: 'Spoqa Han Sans Neo';
-      font-weight: 700;
-      font-display: swap;
-      src: local('Spoqa Han Sans Neo Bold'),
-      url('../fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2'),
-      url('../fonts/SpoqaHanSansNeo-Bold.woff') format('woff'),
-      url('../fonts/SpoqaHanSansNeo-Bold.ttf') format('truetype');
-  }
-  
-  @font-face {
-      font-family: 'Spoqa Han Sans Neo';
-      font-weight: 500;
-      font-display: swap;
-      src: local('Spoqa Han Sans Neo Medium'),
-      url('../fonts/SpoqaHanSansNeo-Medium.woff2') format('woff2'),
-      url('../fonts/SpoqaHanSansNeo-Medium.woff') format('woff'),
-      url('../fonts/SpoqaHanSansNeo-Medium.ttf') format('truetype');
-  }
-  
-  @font-face {
-      font-family: 'Spoqa Han Sans Neo';
-      font-weight: 400;
-      font-display: swap;
-      src: local('Spoqa Han Sans Neo Regular'),
-      url('../fonts/SpoqaHanSansNeo-Regular.woff2') format('woff2'),
-      url('../fonts/SpoqaHanSansNeo-Regular.woff') format('woff'),
-      url('../fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
-  }
-}
-
-/* Reset added custom */
+// Reset the box-sizing
 * {
   @include box-sizing(border-box);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -46,9 +13,55 @@
   @include box-sizing(border-box);
 }
 
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font: {
+    family: inherit;
+    size: inherit;
+  }
+  line-height: inherit;
+}
+
 button {
   border: 0;
   background-color: $transparent;
+}
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+[role="button"] {
+  cursor: pointer;
+}
+
+// Links
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+
+  // &:focus {
+  //   @include tab-focus;
+  // }
+}
+
+// Images
+img {
+  vertical-align: middle;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+  @include img-responsive;
 }
 
 /* Body reset */
@@ -64,11 +77,5 @@ html, body {
   height: 100%;
   background-color: $body-bg;
   -webkit-font-smoothing: antialiased;
-  -ms-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
-
-// h1, h2, h3, h4, h5, h6 {
-//   font-weight: $font-weight-medium;
-// }
-

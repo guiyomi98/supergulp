@@ -1,18 +1,20 @@
 // Core variables and mixins
 @import "variables";
 @import "mixins";
+@import "import";
 
 /* Reset and dependencies */
 @import "normalize";
 @import "reset";
 
-
 //Core CSS
 @import "scaffolding";
+@import "type";
 @import "layout";
-@import "query";
+// @import "query";
 
 // Components
+@import "tab";
 
 // Components w/ JavaScript
 

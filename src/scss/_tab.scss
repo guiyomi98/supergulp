@@ -1,0 +1,14 @@
+//
+// Components
+// --------------------------------------------------
+
+/* tab */
+.tab {
+    display: flex;
+    background-color: $gray;
+    padding: 1rem;
+}
+
+.tab__item {
+    flex: 1;
+}
