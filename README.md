@@ -23,7 +23,7 @@ npm install
 ``` js
 gulp dev
 ```
-## Distribution
+## Distribute Product
 배포
 ``` js
 gulp deploy
