@@ -48,7 +48,7 @@ $font-family-base: 'Spoqa Han Sans Neo', 'Malgun Gothic', '맑은 고딕', Helve
 
 //** Font sizeletter-spacing
 $font-size-base:          14px !default;
-$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-large:         ceil(($font-size-base * 1.2)) !default;
 $font-size-small:         ceil(($font-size-base * .85)) !default; // ~12px
 
 //** Font weight
@@ -63,3 +63,9 @@ $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 
 //** Letter-spacing
 // $letter-spacing-base: -.4px !default;
+
+
+//== Number
+//
+//## Layout amount.
+$layout-height: 4rem;

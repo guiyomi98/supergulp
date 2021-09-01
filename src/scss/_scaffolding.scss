@@ -46,6 +46,11 @@
   @include box-sizing(border-box);
 }
 
+button {
+  border: 0;
+  background-color: $transparent;
+}
+
 /* Body reset */
 html, body {
   font: {
@@ -53,13 +58,17 @@ html, body {
     size: $font-size-base;
     weight: $font-weight-base;
   }
+  letter-spacing: -.4px;
   line-height: $line-height-base;
   color: $text-color;
+  height: 100%;
   background-color: $body-bg;
   -webkit-font-smoothing: antialiased;
+  -ms-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: $font-weight-medium;
-}
+// h1, h2, h3, h4, h5, h6 {
+//   font-weight: $font-weight-medium;
+// }
 
