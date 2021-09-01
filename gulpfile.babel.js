@@ -42,7 +42,9 @@ const paths = {
 const htmls = () => 
   gulp
     .src(paths.html.src)
-    .pipe(pug())
+    .pipe(pug({
+      //pretty: true
+    }))
     .pipe(gulp.dest(paths.html.dist))
 
 //images
