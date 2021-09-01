@@ -18,7 +18,13 @@ npm install
 > :blossom:*NOTE.* vscode 사용 권한 거부 시 해당 포스팅 확인: https://dog-developers.tistory.com/183
 
 ## :rocket:Run
-gulpfile.babel.js 환경 실행
+개발 환경 실행(gulpfile.babel.js)
 ``` js
 gulp dev
 ```
+## Distribution
+배포
+``` js
+gulp deploy
+```
+
