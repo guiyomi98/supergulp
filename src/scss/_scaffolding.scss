@@ -35,18 +35,19 @@
   }
 }
 
-// Reset the box-sizing
+/* Reset added custom */
 * {
   @include box-sizing(border-box);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: $transparent;
 }
 *:before,
 *:after {
   @include box-sizing(border-box);
 }
 
-
-// Body reset
-html {
+/* Body reset */
+html, body {
   font: {
     family: $font-family-base;
     size: $font-size-base;
@@ -55,20 +56,10 @@ html {
   line-height: $line-height-base;
   color: $text-color;
   background-color: $body-bg;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-body {
-  font: {
-    family: inherit;
-    size: inherit;
-    weight: inherit;
-  }
-  line-height: inherit;
-  color: inherit;
-  background-color: inherit;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: $font-weight-medium;
 }
+
