@@ -10,7 +10,7 @@ Gulp는 Node.js 기반의 프로세스 자동화 도구이며 MIT 라이센스�
 - Modify: 2021-08-24
 
 ## Installation
-1. node.js 설치: [node.js]https://nodejs.org/en/download/
+1. node.js 설치: [node.js]https://nodejs.org/ko/download/
 2. npm(node module) 설치
 ``` js
 npm install
