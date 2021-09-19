@@ -41,6 +41,7 @@
     "@babel/register": "^7.15.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
+    "gulp-bro": "^2.0.0",
     "gulp-csso": "^4.0.1",
     "gulp-gh-pages": "^0.5.4",
     "gulp-image": "^6.2.1",
@@ -50,9 +51,11 @@
     "sass": "^1.38.0"
   },
   "dependencies": {
+    "babelify": "^10.0.0",
     "del": "^6.0.0",
     "gulp-pug": "^5.0.0",
-    "gulp-rename": "^2.0.0"
+    "gulp-rename": "^2.0.0",
+    "uglifyify": "^5.0.2"
   },
   "bugs": {
     "url": "https://github.com/guiyomi98/supergulp/issues"
