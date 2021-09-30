@@ -6,6 +6,7 @@
 .wrapper {
     height: 100%;
     padding: $layout-height 0;
+    overflow-x: hidden;
 }
 
 .header {
@@ -17,6 +18,7 @@
     align-items: center;
     height: $layout-height;
     border-bottom: 1px solid $gray-lighter;
+    background-color: $white;
     .title {
         flex: 1;
         text-align: center;
@@ -32,6 +34,7 @@
 }
 
 .section {
+    padding: 0 1rem;
     .title {
         font-size: $font-size-medium;
     }

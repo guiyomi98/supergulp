@@ -1,0 +1,178 @@
+//
+// Forms
+// --------------------------------------------------
+
+
+// Normalize non-controls
+//
+// Restyle and baseline non-control form elements.
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
+    // so we reset that to ensure it behaves more like a standard block element.
+    // See https://github.com/twbs/bootstrap/issues/12359.
+    min-width: 0;
+}
+
+input {
+    border: 0;
+    -webkit-appearance: none;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+}
+
+// input styles
+.field {
+    position: relative;
+    height: 45px;
+    label {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        color: $gray-base;
+        transform-origin: 0 50%;
+        transform: translateY(var(--label-y, 0)) scale(var(--label-scale, 1)) translateZ(0);
+        transition: transform .3s, color .3s;
+    }
+    input {
+        opacity: 0;
+        padding: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        &:not(:placeholder-shown),
+        &:focus {
+            & + label {
+                --label-y: -17px;
+                --label-scale: .8;
+                --label-color: $gray-base;
+            }
+        }
+        &:focus {
+            & + label + .cursor {
+                animation: cursor 1s ease infinite;
+            }
+        }
+    }
+    .cursor {
+        position: absolute;
+        height: 15px;
+        width: 1px;
+        left: 0;
+        top: 10px;
+        background: var(--primary);
+        opacity: 0;
+        transform: translateX(var(--cursor-x, 0));
+        transition: transform var(--cursor-duration, .1s);
+    }
+    .line,
+    .tick {
+        display: block;
+        pointer-events: none;
+        position: absolute;
+        left: var(--left, 0);
+        bottom: var(--bottom, -10px);
+        opacity: var(--opacity, 1);
+        transition: opacity 0s linear var(--tick-opacity-delay, .5s);
+        svg {
+            stroke: $gray-lighter;
+            stroke-width: 1;
+            fill: none;
+            display: block;
+            width: var(--width, 900px);
+            height: var(--height, 22px);
+            transform: translateX(var(--x, var(--line-x, 0)));
+            transition: transform var(--line-x-duration, 0s) ease, stroke .3s;
+        }
+    }
+    .line {
+        overflow: hidden;
+        width: 100%;
+        transform-origin: 0 50%;
+    }
+    .tick {
+        --left: 100%;
+        --bottom: -1px;
+        --width: 32px;
+        --height: 28px;
+        --x: -16px;
+        --opacity: 0;
+        svg {
+            stroke: $gray-lighter;
+            stroke-dasharray: 17 81;
+            stroke-dashoffset: var(--tick-offset, 34px);
+            transition: stroke-dashoffset .5s ease var(--tick-delay, 0s), stroke .5s ease var(--tick-delay, 0s);
+        }
+    }
+    .clear {
+        position: relative;
+        padding: 0;
+        margin: 12px 12px 12px 0;
+        background: var(--b, transparent);
+        transition: background .2s;
+        border-radius: 50%;
+        opacity: var(--clear-opacity);
+        transform: scale(var(--clear-scale)) translateZ(0);
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 12px;
+            left: var(--clear-swipe-left);
+            background: var(--background);
+            transform-origin: 100% 50%;
+            transform: translateX(var(--clear-swipe)) scaleX(var(--clear-swipe-x)) translateZ(0);
+        }
+        svg {
+            display: block;
+            position: relative;
+            z-index: 1;
+            width: 24px;
+            height: 24px;
+            outline: none;
+            cursor: pointer;
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke: var(--close);
+            transform: translateX(var(--clear-x)) rotate(var(--clear-rotate)) translateZ(0);
+            path {
+                transition: stroke .2s;
+                &.arrow {
+                    stroke: $black;
+                    stroke-dasharray: 4px;
+                    stroke-dashoffset: var(--clear-arrow-offset);
+                    opacity: var(--clear-arrow-o);
+                    transform: translate(var(--clear-arrow-x), var(--clear-arrow-y)) translateZ(0);
+                    &:last-child {
+                        stroke-dashoffset: var(--clear-arrow-offset-second);
+                    }
+                }
+                &.line {
+                    stroke-dasharray: var(--clear-line-array) 28.5px;
+                    stroke-dashoffset: var(--clear-line-offset);
+                }
+                &.long {
+                    stroke: $black;
+                    stroke-dasharray: var(--clear-long-array) 15.5px;
+                    stroke-dashoffset: var(--clear-long-offset);
+                    opacity: var(--clear-arrow-o);
+                    transform: translate(var(--clear-arrow-x), var(--clear-arrow-y)) translateZ(0);
+                }
+            }
+        }
+        &:hover {
+            --b: $gray-lighter;
+        }
+    }
+}

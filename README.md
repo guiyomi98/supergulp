@@ -4,10 +4,15 @@ Gulp는 Node.js 기반의 프로세스 자동화 도구이며 MIT 라이센스�
 이 프로젝트는 간편한 퍼블리싱 작업을 위해 개발되었습니다.
 
 ## UI Components for web
-- Technology: node gulp (scss)
 - Creat: guiyomi98@gmail.com
 - Creat Date: 2021-08-24
-- Modify: 2021-08-24
+- Modify: 2021-09-29
+
+## Technology
+- JavaScript Node.js
+- Npm gulp
+- Scss
+- Pug
 
 ## Installation
 1. node.js 설치: [node.js]https://nodejs.org/ko/download/
@@ -24,7 +29,7 @@ npm install
 gulp dev
 ```
 ## Distribute product
-배포
+빌드 후 배포
 ``` js
 gulp deploy
 ```
