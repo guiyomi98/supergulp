@@ -36,7 +36,7 @@ const paths = {
     dist: "dist/assets/stylesheets/"
   },
   js: {
-    src: "src/scripts/",
+    src: "src/scripts/*.js",
     dist: "dist/assets/scripts"
   }
 }
@@ -78,7 +78,7 @@ gulp
 //script
 const js = () => 
 gulp
-  .src(paths.js.src + "main.js")
+  .src(paths.js.src)
   .pipe(bro({
     transform: [
       babelify.configure({ presets: ['@babel/preset-env'] }),
