@@ -30,7 +30,7 @@ const paths = {
     dist: "dist/assets/images"
   },
   scss: {
-    src: "src/scss/*.scss",
+    src: "src/stylesheets/*.scss",
     dist: "dist/assets/stylesheets/"
   }
 }
