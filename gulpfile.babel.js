@@ -10,9 +10,11 @@ import autoprefixer    from "gulp-autoprefixer"
 import minicss         from "gulp-csso"
 import ghpages         from "gulp-gh-pages"
 import rename          from "gulp-rename"
+import bro             from "gulp-bro"
+import babelify        from "babelify"
 
+const sass = require('gulp-sass')(require('sass'))
 
-const sass = require('gulp-sass')(require('sass'));
 
 //directory
 const paths = {
@@ -32,6 +34,10 @@ const paths = {
   scss: {
     src: "src/stylesheets/*.scss",
     dist: "dist/assets/stylesheets/"
+  },
+  js: {
+    src: "src/scripts/",
+    dist: "dist/assets/scripts"
   }
 }
 
@@ -69,6 +75,18 @@ gulp
   .pipe(rename({suffix: ".min"}))
   .pipe(gulp.dest(paths.scss.dist))
 
+//script
+const js = () => 
+gulp
+  .src(paths.js.src + "main.js")
+  .pipe(bro({
+    transform: [
+      babelify.configure({ presets: ['@babel/preset-env'] }),
+      [ 'uglifyify', { global: true } ]
+    ]
+  }))
+  .pipe(gulp.dest(paths.js.dist))
+
 //fonts
 const fonts = () =>
   gulp
@@ -83,6 +101,7 @@ const watch = () => {
   gulp.watch(paths.html.watch, htmls)
   gulp.watch(paths.img.src, imgs)
   gulp.watch(paths.scss.src, styles)
+  gulp.watch(paths.js.src, js)
 }
 
 //deploy
@@ -104,9 +123,9 @@ const server = () =>
  * running tasks
  */
 const resourece = gulp.series([clean, imgs, fonts])
-const assets = gulp.parallel([htmls, styles])
+const assets = gulp.parallel([htmls, styles, js])
 const live = gulp.parallel([server, watch])
 
 export const dev = gulp.series([resourece, assets, live])
-export const build = gulp.series([resourece, assets, minify])
+export const build = gulp.series([resourece, assets])
 export const deploy = gulp.series([build, pages, clean])
