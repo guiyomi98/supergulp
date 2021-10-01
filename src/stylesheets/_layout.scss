@@ -4,8 +4,8 @@
 
 /* Layout */
 .wrapper {
-    height: 100%;
-    padding: $layout-height 0;
+    // height: 100%;
+    padding: $area-click 0;
     overflow-x: hidden;
 }
 
@@ -16,13 +16,13 @@
     width: 100%;
     display: flex;
     align-items: center;
-    height: $layout-height;
+    height: $area-click;
     border-bottom: 1px solid $gray-lighter;
     background-color: $white;
     .title {
         flex: 1;
         text-align: center;
-        font-size: $font-size-large;
+        font-size: 1.6rem;
     }
 }
 
@@ -34,18 +34,77 @@
 }
 
 .section {
-    padding: 0 1rem;
+    padding: 0 $area-padd;
     .title {
         font-size: $font-size-medium;
         line-height: $line-height-text;
     }
 }
 
-.footer {
+.aside {
     position: fixed;
     left: 0;
+    right: 0;
     bottom: 0;
     width: 100%;
-    height: $layout-height;
+}
+
+.gnb {
+    padding: $area-padd 0;
+    background-color: $white;
+    ul {
+        display: flex;
+        li {
+            display: inline-flex;
+            flex: 1;
+            justify-content: center;
+        }
+    }
+    .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        // padding: 1.5rem;
+        z-index: 0;
+        transition: transform 0.4s ease-in-out;
+        transform: translateX(var(--translate-main-slider));
+    }
+    
+    .slider__item {
+        display: block;
+        height: 4.8rem;
+        width: 4.8rem;
+        border-radius: 50%;
+        transition: background-color 0.4s ease-in-out;
+        background-color: $brand-primary;
+    }
+}
+
+.gnb__item {
+    display: inline-flex;
+    align-items: center;
+    width: $area-click;
+    height: $area-click;
+    color: $gray-base;
+    border-radius: 50%;
+    justify-content: center;
+    transition: color 0.2s ease-in-out;
+    &:hover ,
+    &.is-active {
+        color: $black;
+    }
+    svg {
+        width: 2.8rem;
+        height: 2.8rem;
+        transform: translate(0, 0);
+    }
+}
+
+
+.footer {
+    color: $gray;
+    text-align: center;
+    padding: 10px 0;
     border-top: 1px solid $gray-lighter;
+    margin-top: 10px;
 }
