@@ -4,7 +4,7 @@ Gulp는 Node.js 기반의 프로세스 자동화 도구이며 MIT 라이센스�
 이 프로젝트는 간편한 퍼블리싱 작업을 위해 개발되었습니다.
 
 ## UI Components for web
-- Creat: guiyomi98@gmail.com
+- Author: guiyomi98@gmail.com
 - Creat Date: 2021-08-24
 - Modify: 2021-09-29
 
