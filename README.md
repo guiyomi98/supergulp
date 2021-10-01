@@ -9,16 +9,17 @@ Gulp는 Node.js 기반의 프로세스 자동화 도구이며 MIT 라이센스�
 - Modify: 2021-09-29
 
 ## Technology
-- JavaScript Node.js
-- Npm gulp
-- Scss
-- Pug
+- node.js
+- npm gulp
+- scss
+- pug
+- gsap [GSAP:GreenSock Animation Platform]https://github.com/greensock/GSAP
 
 ## Installation
 1. node.js 설치: [node.js]https://nodejs.org/ko/download/
 2. npm(node module) 설치
 ``` js
-npm install
+$ npm install
 ```
 > :blossom:*NOTE.* vscode 사용 권한 거부 시 해당 포스팅 확인: https://dog-developers.tistory.com/183
 3. gulpfile.babel.js 실행
@@ -26,11 +27,11 @@ npm install
 ## :rocket:Run
 개발 환경 실행
 ``` js
-gulp dev
+$ gulp dev
 ```
 ## Distribute product
 빌드 후 배포
 ``` js
-gulp deploy
+$ gulp deploy
 ```
 
