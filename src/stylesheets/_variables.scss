@@ -46,7 +46,8 @@ $link-hover-decoration: none !default;
 
 $font-family-base: 'Spoqa Han Sans Neo', 'Malgun Gothic', '맑은 고딕', Helvetica, Arial, sans-serif !default;
 
-//** Font sizeletter-spacing
+//** Font size
+$font-size-reset:         62.5% !default; // https://mikkeller.tistory.com/25
 $font-size-base:          14px !default;
 $font-size-large:         ceil(($font-size-base * 1.2)) !default;
 $font-size-medium:        ceil(($font-size-base * 1.1)) !default;
@@ -71,4 +72,5 @@ $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 //== Number
 //
 //## Layout amount.
-$layout-height: 4rem;
+$area-click:     4.5rem !default; //ios: 30px/44px/50px, aos: 36px/48px/56px  https://brunch.co.kr/@chulhochoiucj0/23
+$area-padd:      .5rem !default;
