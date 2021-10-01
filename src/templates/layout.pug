@@ -12,7 +12,7 @@ html(lang="ko")
             include ../particles/header
 
             article.container.login
-                h2.invisible login page
+                h2.invisible#titlePg login page
                 section.section
                     h3.title 로그인
                     form.form
@@ -53,10 +53,8 @@ html(lang="ko")
                             circle.top(cx="12" cy="-12" r="8")
                             circle.dot(cx="12" cy="12" r="5")
                             circle.drop(cx="12" cy="12" r="2")
-
-            //- include ../particles/footer
-
             include ../particles/gnb
+            include ../particles/footer
 
             script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js")
             script(src="./assets/scripts/ui.common.js")
