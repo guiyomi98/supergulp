@@ -41,19 +41,22 @@ html(lang="ko")
                                 circle(stroke-opacity=".1" cx="8" cy="8" r="6")
                                 circle.load(cx="8" cy="8" r="6")
                             span 확인
-                    //- ul.tab
-                        //- - for (var x = 0; x < 3; x++)
-                        //-     li.tab__item 탭
-                        //- - var list = ["전체", "즐겨찾기", "3개월실적", "추천상품"]
-                        //- each item in list
-                        //-     li.tab__item= item
-                
-
-                    
-
+                    label.radio
+                        input(type="radio" name="radio" value="1" checked)
+                        svg(viewBox="0 0 24 24" filter="url(#goo-light)")
+                            circle.top(cx="12" cy="-12" r="8")
+                            circle.dot(cx="12" cy="12" r="5")
+                            circle.drop(cx="12" cy="12" r="2")
+                    label.radio
+                        input(type="radio" name="radio" value="2")
+                        svg(viewBox="0 0 24 24" filter="url(#goo-light)")
+                            circle.top(cx="12" cy="-12" r="8")
+                            circle.dot(cx="12" cy="12" r="5")
+                            circle.drop(cx="12" cy="12" r="2")
 
             //- include ../particles/footer
 
             include ../particles/gnb
 
-            script(src="/assets/scripts/main.js")
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js")
+            script(src="./assets/scripts/ui.common.js")
