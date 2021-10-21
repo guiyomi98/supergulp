@@ -10,9 +10,10 @@ Gulp는 Node.js 기반의 프로세스 자동화 도구이며 MIT 라이센스�
 
 ## Technology
 - node.js
-- npm gulp
-- scss
-- pug
+  - npm gulp
+  - babel
+  - scss
+  - pug
 - gsap(GreenSock Animation Platform) <a href="https://github.com/greensock/GSAP" title="GSAP 깃허브" target="_black">깃허브 참고</a>
 
 ## Installation
