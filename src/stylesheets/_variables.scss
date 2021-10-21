@@ -8,8 +8,8 @@ $sass-asset-helper: false !default;
 //
 //## Base(Gray) and brand colors.
 
-$black:                  #141414 !default;
-$gray-base:              #858585 !default; // font base
+$black:                  #1F1F39 !default;
+$gray-base:              #B8B8D2 !default; // font base
 $gray-darker:            #b9b9b9 !default;
 $gray-dark:              #bfbfbf !default;
 $gray:                   #dadada !default;
@@ -48,7 +48,7 @@ $font-family-base: 'Spoqa Han Sans Neo', 'Malgun Gothic', '맑은 고딕', Helve
 
 //** Font size
 $font-size-reset:         62.5% !default; // https://mikkeller.tistory.com/25
-$font-size-base:          14px !default;
+$font-size-base:          1.4rem !default; //14px
 $font-size-large:         ceil(($font-size-base * 1.2)) !default;
 $font-size-medium:        ceil(($font-size-base * 1.1)) !default;
 $font-size-small:         ceil(($font-size-base * .85)) !default; // ~12px
@@ -73,4 +73,7 @@ $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 //
 //## Layout amount.
 $area-click:     4.5rem !default; //ios: 30px/44px/50px, aos: 36px/48px/56px  https://brunch.co.kr/@chulhochoiucj0/23
-$area-padd:      .5rem !default;
+$area-padd:      2.4rem !default;
+
+
+$radius-base: 12px;
