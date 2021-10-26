@@ -19,7 +19,7 @@ $gray-lighter:           #eee !default;    // line color
 $white:                  #fff !default;
 $transparent:              transparent !default;
 
-$brand-primary:          #1fbda5 !default;
+$brand-primary:          #3D5CFF !default;
 $brand-secondary:        #45608d !default;
 
 
@@ -77,3 +77,7 @@ $area-padd:      2.4rem !default;
 
 
 $radius-base: 12px;
+
+// z-index
+$level-0: 9999;
+$level-1: 100;
