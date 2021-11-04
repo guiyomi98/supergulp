@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* Import the fonts */
 @font-face {
   font-family: "Spoqa Han Sans Neo";
   font-weight: 400;
@@ -322,11 +323,11 @@ button {
 }
 
 a {
-  color: #141414;
+  color: #1F1F39;
   text-decoration: none;
 }
 a:hover, a:focus {
-  color: #141414;
+  color: #1F1F39;
   text-decoration: none;
 }
 
@@ -343,13 +344,13 @@ img {
 /* Body reset */
 html, body {
   font-family: "Spoqa Han Sans Neo", "Malgun Gothic", "맑은 고딕", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 62.5%;
   font-weight: 400;
   letter-spacing: -0.4px;
   line-height: 1;
-  color: #141414;
+  color: #1F1F39;
   height: 100%;
-  background-color: #fff;
+  background-color: #F6F8FF;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
      -moz-text-size-adjust: none;
@@ -357,10 +358,14 @@ html, body {
           text-size-adjust: none;
 }
 
+.wrapper {
+  font-size: 1.4rem;
+}
+
 /* Layout */
 .wrapper {
-  height: 100%;
-  padding: 4rem 0;
+  padding: 4.5rem 0;
+  overflow-x: hidden;
 }
 
 .header {
@@ -374,15 +379,17 @@ html, body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 4rem;
+  height: 4.5rem;
   border-bottom: 1px solid #eee;
+  background-color: #fff;
+  z-index: 100;
 }
 .header .title {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   text-align: center;
-  font-size: 17px;
+  font-size: 1.6rem;
 }
 
 .container {
@@ -396,17 +403,641 @@ html, body {
   height: 100%;
 }
 
+.section {
+  padding: 0 2.4rem;
+  background-color: #fff;
+}
 .section .title {
-  font-size: 16px;
+  font-size: 2rem;
+  line-height: 1.4;
+}
+.section .text {
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.aside {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.gnb {
+  background-color: #fff;
+  padding: 1rem 0 2.5rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+  -webkit-box-shadow: 0px 2px 15px rgba(184, 184, 210, 0.5);
+          box-shadow: 0px 2px 15px rgba(184, 184, 210, 0.5);
+}
+.gnb ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.gnb ul li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.gnb .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -webkit-transform: translateX(var(--translate-main-slider));
+          transform: translateX(var(--translate-main-slider));
+}
+.gnb .slider__item {
+  display: block;
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  -webkit-transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+  background-color: #3D5CFF;
+}
+
+.gnb__item {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 6rem;
+  font-size: 1.4rem;
+  color: #B8B8D2;
+  border-radius: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+.gnb__item:hover, .gnb__item.is-active {
+  color: #3D5CFF;
+}
+.gnb__item:hover svg, .gnb__item.is-active svg {
+  fill: #3D5CFF;
+}
+.gnb__item svg {
+  width: 2.4rem;
+  margin-bottom: 1rem;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  fill: #eee;
 }
 
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 4rem;
+  color: #dadada;
+  text-align: center;
+  padding: 10px 0;
   border-top: 1px solid #eee;
+  margin-top: 10px;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+
+input {
+  font-size: 1.4rem;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+}
+
+button {
+  padding: 0;
+}
+
+.field {
+  position: relative;
+  height: 50px;
+  background: #fff;
+  border: 1px solid #B8B8D2;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.field + .field {
+  margin-top: 24px;
+}
+.field input {
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0 50px 0 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+.field input:not(:-moz-placeholder-shown) + label {
+  --label-y: -17px;
+  --label-scale: .8;
+  --label-color: $gray-base;
+}
+.field input:not(:-ms-input-placeholder) + label {
+  --label-y: -17px;
+  --label-scale: .8;
+  --label-color: $gray-base;
+}
+.field input:not(:placeholder-shown) + label, .field input:focus + label {
+  --label-y: -17px;
+  --label-scale: .8;
+  --label-color: $gray-base;
+}
+.field input:focus + label + .cursor {
+  -webkit-animation: cursor 1s ease infinite;
+          animation: cursor 1s ease infinite;
+}
+.field .delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+}
+.field .delete .icon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #C4C4C4;
+}
+.field .delete .icon::before, .field .delete .icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 2px;
+  background-color: #fff;
+}
+.field .delete .icon::before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+.field .delete .icon::after {
+  -webkit-transform: translate(-50%, -50%) rotate(135deg);
+          transform: translate(-50%, -50%) rotate(135deg);
+}
+.field .cursor {
+  position: absolute;
+  height: 15px;
+  width: 1px;
+  left: 0;
+  top: 10px;
+  background: var(--primary);
+  opacity: 0;
+  -webkit-transform: translateX(var(--cursor-x, 0));
+          transform: translateX(var(--cursor-x, 0));
+  -webkit-transition: -webkit-transform var(--cursor-duration, 0.1s);
+  transition: -webkit-transform var(--cursor-duration, 0.1s);
+  transition: transform var(--cursor-duration, 0.1s);
+  transition: transform var(--cursor-duration, 0.1s), -webkit-transform var(--cursor-duration, 0.1s);
+}
+.field .line,
+.field .tick {
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  left: var(--left, 0);
+  bottom: var(--bottom, -10px);
+  opacity: var(--opacity, 1);
+  -webkit-transition: opacity 0s linear var(--tick-opacity-delay, 0.5s);
+  transition: opacity 0s linear var(--tick-opacity-delay, 0.5s);
+}
+.field .line svg,
+.field .tick svg {
+  stroke: #eee;
+  stroke-width: 1;
+  fill: none;
+  display: block;
+  width: var(--width, 900px);
+  height: var(--height, 22px);
+  -webkit-transform: translateX(var(--x, var(--line-x, 0)));
+          transform: translateX(var(--x, var(--line-x, 0)));
+  -webkit-transition: stroke 0.3s, -webkit-transform var(--line-x-duration, 0s) ease;
+  transition: stroke 0.3s, -webkit-transform var(--line-x-duration, 0s) ease;
+  transition: transform var(--line-x-duration, 0s) ease, stroke 0.3s;
+  transition: transform var(--line-x-duration, 0s) ease, stroke 0.3s, -webkit-transform var(--line-x-duration, 0s) ease;
+}
+.field .line {
+  overflow: hidden;
+  width: 100%;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+}
+.field .tick {
+  --left: 100%;
+  --bottom: -1px;
+  --width: 32px;
+  --height: 28px;
+  --x: -16px;
+  --opacity: 0;
+}
+.field .tick svg {
+  stroke: #eee;
+  stroke-dasharray: 17 81;
+  stroke-dashoffset: var(--tick-offset, 34px);
+  -webkit-transition: stroke-dashoffset 0.5s ease var(--tick-delay, 0s), stroke 0.5s ease var(--tick-delay, 0s);
+  transition: stroke-dashoffset 0.5s ease var(--tick-delay, 0s), stroke 0.5s ease var(--tick-delay, 0s);
+}
+.field .clear {
+  position: relative;
+  padding: 0;
+  margin: 12px 12px 12px 0;
+  background: var(--b, transparent);
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  border-radius: 50%;
+  opacity: var(--clear-opacity);
+  -webkit-transform: scale(var(--clear-scale)) translateZ(0);
+          transform: scale(var(--clear-scale)) translateZ(0);
+}
+.field .clear:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 12px;
+  left: var(--clear-swipe-left);
+  background: var(--background);
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  -webkit-transform: translateX(var(--clear-swipe)) scaleX(var(--clear-swipe-x)) translateZ(0);
+          transform: translateX(var(--clear-swipe)) scaleX(var(--clear-swipe-x)) translateZ(0);
+}
+.field .clear svg {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  outline: none;
+  cursor: pointer;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: var(--close);
+  -webkit-transform: translateX(var(--clear-x)) rotate(var(--clear-rotate)) translateZ(0);
+          transform: translateX(var(--clear-x)) rotate(var(--clear-rotate)) translateZ(0);
+}
+.field .clear svg path {
+  -webkit-transition: stroke 0.2s;
+  transition: stroke 0.2s;
+}
+.field .clear svg path.arrow {
+  stroke: #1F1F39;
+  stroke-dasharray: 4px;
+  stroke-dashoffset: var(--clear-arrow-offset);
+  opacity: var(--clear-arrow-o);
+  -webkit-transform: translate(var(--clear-arrow-x), var(--clear-arrow-y)) translateZ(0);
+          transform: translate(var(--clear-arrow-x), var(--clear-arrow-y)) translateZ(0);
+}
+.field .clear svg path.arrow:last-child {
+  stroke-dashoffset: var(--clear-arrow-offset-second);
+}
+.field .clear svg path.line {
+  stroke-dasharray: var(--clear-line-array) 28.5px;
+  stroke-dashoffset: var(--clear-line-offset);
+}
+.field .clear svg path.long {
+  stroke: #1F1F39;
+  stroke-dasharray: var(--clear-long-array) 15.5px;
+  stroke-dashoffset: var(--clear-long-offset);
+  opacity: var(--clear-arrow-o);
+  -webkit-transform: translate(var(--clear-arrow-x), var(--clear-arrow-y)) translateZ(0);
+          transform: translate(var(--clear-arrow-x), var(--clear-arrow-y)) translateZ(0);
+}
+.field .clear:hover {
+  --b: $gray-lighter;
+}
+
+.label {
+  color: #B8B8D2;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+.label ~ .label {
+  margin-top: 24px;
+}
+
+.radio,
+.checkbox,
+.switch {
+  --c-active: #275EFE;
+  --c-active-inner: #FFFFFF;
+  --c-default: #D2D6E9;
+  --c-default-dark: #C7CBDF;
+  --c-black: #1B1B22;
+  position: relative;
+  border-radius: var(--border-radius, 12px) var(--border-radius-corner, 12px) var(--border-radius, 12px) var(--border-radius, 12px);
+}
+.radio input,
+.checkbox input,
+.switch input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border: none;
+  background: var(--input-background, none);
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border-radius: inherit;
+  width: var(--input-width, 24px);
+  height: var(--input-height, 24px);
+}
+.radio svg,
+.checkbox svg,
+.switch svg {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  pointer-events: none;
+  fill: var(--c-active-inner);
+  -webkit-transform: scale(1.01) translateZ(0);
+          transform: scale(1.01) translateZ(0);
+}
+
+.radio input,
+.checkbox input {
+  --border-color: var(--c-default);
+  --border-width: 2px;
+  -webkit-box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
+          box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
+}
+.radio input:checked,
+.checkbox input:checked {
+  --border-color: var(--c-active);
+}
+.radio input:not(:checked),
+.checkbox input:not(:checked) {
+  -webkit-transition: -webkit-box-shadow 0.25s;
+  transition: -webkit-box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+}
+.radio input:not(:checked):hover,
+.checkbox input:not(:checked):hover {
+  --border-width: 3px;
+  --border-color: var(--c-active);
+}
+
+.radio input:checked {
+  --border-width: 6.75px;
+}
+.radio input + svg {
+  --top-y: 0;
+  --dot-y: -17px;
+  --drop-y: -14px;
+  --top-s-x: 1.75;
+  --top-s-y: 1;
+}
+.radio input + svg .top {
+  -webkit-transform-origin: 12px -12px;
+          transform-origin: 12px -12px;
+  -webkit-transform: translateY(var(--top-y)) scale(var(--top-s-x), var(--top-s-y)) translateZ(0);
+          transform: translateY(var(--top-y)) scale(var(--top-s-x), var(--top-s-y)) translateZ(0);
+}
+.radio input + svg .dot {
+  -webkit-transform: translateY(var(--dot-y)) translateZ(0);
+          transform: translateY(var(--dot-y)) translateZ(0);
+}
+.radio input + svg .drop {
+  -webkit-transform: translateY(var(--drop-y)) translateZ(0);
+          transform: translateY(var(--drop-y)) translateZ(0);
+}
+
+.checkbox {
+  --border-radius: 5px;
+  --border-radius-corner: 5px;
+}
+.checkbox input:checked {
+  --border-width: 12px;
+}
+.checkbox input:checked + svg {
+  --tick-offset: 46.5px;
+}
+.checkbox input + svg {
+  --dot-x: 14px;
+  --dot-y: -14px;
+  --dot-s: 1;
+  --tick-offset: 20.5px;
+  --tick-array: 16.5px;
+  --tick-s: 1;
+  --drop-s: 1;
+}
+.checkbox input + svg .tick {
+  fill: none;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: var(--c-active-inner);
+  stroke-dasharray: var(--tick-array) 33px;
+  stroke-dashoffset: var(--tick-offset);
+  -webkit-transform-origin: 10.5px 16px;
+          transform-origin: 10.5px 16px;
+  -webkit-transform: scale(var(--tick-s)) translateZ(0);
+          transform: scale(var(--tick-s)) translateZ(0);
+}
+.checkbox input + svg .dot {
+  -webkit-transform-origin: 10.5px 15.5px;
+          transform-origin: 10.5px 15.5px;
+  -webkit-transform: translate(var(--dot-x), var(--dot-y)) scale(var(--dot-s)) translateZ(0);
+          transform: translate(var(--dot-x), var(--dot-y)) scale(var(--dot-s)) translateZ(0);
+}
+.checkbox input + svg .drop {
+  -webkit-transform-origin: 25px -1px;
+          transform-origin: 25px -1px;
+  -webkit-transform: scale(var(--drop-s)) translateZ(0);
+          transform: scale(var(--drop-s)) translateZ(0);
+}
+
+.switch {
+  --input-width: 38px;
+}
+.switch input {
+  --input-background: var(--c-default);
+}
+.switch input:checked {
+  --input-background: var(--c-active);
+}
+.switch input:checked + svg {
+  --default-s: 0;
+  --default-x: 8px;
+  --dot-s: 1;
+  --dot-x: 0px;
+}
+.switch input + svg {
+  --input-background: var(--c-default);
+  --default-s: 1;
+  --default-x: 0px;
+  --dot-s: 0;
+  --dot-x: -8px;
+}
+.switch .default {
+  -webkit-transform-origin: 12px 12px;
+          transform-origin: 12px 12px;
+  -webkit-transform: translateX(var(--default-x)) scale(var(--default-s)) translateZ(0);
+          transform: translateX(var(--default-x)) scale(var(--default-s)) translateZ(0);
+}
+.switch .dot {
+  -webkit-transform-origin: 26px 12px;
+          transform-origin: 26px 12px;
+  -webkit-transform: translateX(var(--dot-x)) scale(var(--dot-s)) translateZ(0);
+          transform: translateX(var(--dot-x)) scale(var(--dot-s)) translateZ(0);
+}
+
+.btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  position: relative;
+  background: var(--c-black);
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 600;
+  display: block;
+  width: 132px;
+  text-align: center;
+  border-radius: 7px;
+  margin: 0 auto;
+  padding: 12px 0;
+}
+.btn span {
+  position: relative;
+  z-index: 1;
+}
+.btn svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: var(--c-active);
+}
+.btn svg circle {
+  -webkit-transition: -webkit-transform var(--duration, 0.25s) ease-out;
+  transition: -webkit-transform var(--duration, 0.25s) ease-out;
+  transition: transform var(--duration, 0.25s) ease-out;
+  transition: transform var(--duration, 0.25s) ease-out, -webkit-transform var(--duration, 0.25s) ease-out;
+}
+.btn svg circle.top-left {
+  -webkit-transform: translate(var(--spacing, -16px), var(--spacing, -40px));
+          transform: translate(var(--spacing, -16px), var(--spacing, -40px));
+}
+.btn svg circle.middle-bottom {
+  -webkit-transform: translate(var(--spacing, 8px), var(--spacing, 40px));
+          transform: translate(var(--spacing, 8px), var(--spacing, 40px));
+}
+.btn svg circle.top-right {
+  -webkit-transform: translate(var(--spacing, 40px), var(--spacing, -40px));
+          transform: translate(var(--spacing, 40px), var(--spacing, -40px));
+}
+.btn svg circle.right-bottom {
+  -webkit-transform: translate(var(--spacing, 4px), var(--spacing, 40px));
+          transform: translate(var(--spacing, 4px), var(--spacing, 40px));
+}
+.btn svg circle.left-bottom {
+  -webkit-transform: translate(var(--spacing, -40px), var(--spacing, 40px));
+          transform: translate(var(--spacing, -40px), var(--spacing, 40px));
+}
+.btn:hover {
+  --spacing: 0;
+  --duration: .45s;
+}
+
+.list__item {
+  position: relative;
+  padding: 1.4rem;
+  padding-left: 9.6rem;
+  min-height: 6.8rem;
+  background-color: #fff;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  border-radius: 1.2rem;
+  -webkit-box-shadow: 0px 8px 12px -4px #b8b8d233;
+          box-shadow: 0px 8px 12px -4px #b8b8d233;
+  margin-top: 1.6rem;
+}
+.list__item .title {
+  font-size: 1.4rem;
+}
+.list__item .img {
+  position: absolute;
+  top: 50%;
+  left: 1.4rem;
+  display: inline-block;
+  width: 6.8rem;
+  height: 6.8rem;
+  padding: 1.4rem;
+  border-radius: 0.8rem;
+  background-color: #EAEAFF;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.list__item .name {
+  color: #B8B8D2;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+.list__item .price {
+  color: #3D5CFF;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.list__item .tag {
+  color: #FF6905;
+  padding: 0.2rem 1rem;
+  margin-left: 0.4rem;
+  border-radius: 1rem;
+  background-color: #FFEBF0;
 }
 
 /* tab */
@@ -466,4 +1097,85 @@ html, body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.illust {
+  display: block;
+  max-width: 260px;
+  margin: 0 auto 3.4rem;
+  border-radius: 6rem;
+  background-color: #CDECFE;
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+}
+.illust img {
+  display: inline-block;
+  width: 100%;
+}
+
+.title-001 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.fullpage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.text-002 {
+  font-size: 1.6rem;
+  color: #858597;
+  line-height: 1.4;
+  margin-top: 2rem;
+}
+
+.btn-close {
+  position: absolute;
+  top: 6rem;
+  right: 1.6rem;
+  display: block;
+  color: #858597;
+  padding: 1.3rem 1rem;
+}
+
+.pavigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5.3rem;
+}
+.pavigation li {
+  padding: 0.5rem;
+}
+.pavigation li.is-active a {
+  width: 2.8rem;
+  background-color: #3D5CFF;
+}
+.pavigation li a {
+  display: block;
+  width: 0.9rem;
+  height: 0.5rem;
+  font-size: 0;
+  border-radius: 0.5rem;
+  background-color: #EAEAFF;
+  cursor: pointer;
 }
