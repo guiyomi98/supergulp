@@ -56,7 +56,7 @@ const htmls = () =>
 //images
 const imgs = () => 
   gulp
-    .src(paths.img.src)
+    .src(paths.img.src + '/**/*.{png,jpg,jpeg,gif,svg}')
     .pipe(image())
     .pipe(gulp.dest(paths.img.dist))
 
