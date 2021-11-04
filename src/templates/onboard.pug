@@ -1,0 +1,32 @@
+doctype html
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title My Site - #{title}
+        link(rel="shortcut icon", href="#")
+        link(rel="stylesheet", href="./assets/stylesheets/styles.css", type="text/css")
+    body
+        .wrapper
+            article.container.onboard
+                h2.invisible#titlePg onboard step 1
+                section.section.fullpage
+                    span.illust
+                        img(src="./assets/images/illust/onboard01.png" alt="Numerous free trial courses" title="Numerous free trial courses")
+                    h3.title-001 Numerous free trial courses
+                    p.text-002 Free courses for you to find your way to learning
+                    ul.pavigation
+                        li.is-active
+                            a step 1
+                        li
+                            a step 1
+                        li
+                            a step 1
+                    button.btn-close(type="button") skip
+
+            //- include ../particles/gnb
+            include ../particles/footer
+
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js")
+            //- script(src="./assets/scripts/ui.common.js")

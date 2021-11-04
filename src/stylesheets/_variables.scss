@@ -15,12 +15,15 @@ $gray-dark:              #bfbfbf !default;
 $gray:                   #dadada !default;
 $gray-light:             #e6e6e6 !default; // disabled
 $gray-lighter:           #eee !default;    // line color
+$gray-font:              #B8B8D2 !default;
 
 $white:                  #fff !default;
 $transparent:              transparent !default;
+$orange: #FF6905;
 
 $brand-primary:          #3D5CFF !default;
-$brand-secondary:        #45608d !default;
+$brand-secondary:        #FFEBF0 !default;
+$brand-tertiary:         #EAEAFF !default;
 
 
 //== Scaffolding
@@ -51,7 +54,8 @@ $font-size-reset:         62.5% !default; // https://mikkeller.tistory.com/25
 $font-size-base:          1.4rem !default; //14px
 $font-size-large:         ceil(($font-size-base * 1.2)) !default;
 $font-size-medium:        ceil(($font-size-base * 1.1)) !default;
-$font-size-small:         ceil(($font-size-base * .85)) !default; // ~12px
+$regular:                 1.6rem !default;
+$small:                   1.2rem !default;
 
 //** Font weight
 $font-weight-base:        400 !default;

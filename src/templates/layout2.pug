@@ -1,0 +1,31 @@
+doctype html
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title My Site - #{title}
+        link(rel="shortcut icon", href="#")
+        link(rel="stylesheet", href="./assets/stylesheets/styles.css", type="text/css")
+    body
+        .wrapper
+            article.container.search
+                h2.invisible#titlePg search
+                section.section
+                    h3.title Results
+                    ul.list
+                        - for (var x = 0; x < 3; x++)
+                            li.list__item 
+                                h4.title Product Design v1.0
+                                span.name Robertson Connie
+                                span.img 
+                                    //- img(src="#" alt="Product Design v1.0" title="Product Design v1.0")
+                                p
+                                    span.price $190
+                                    span.tag 16hour
+
+            include ../particles/gnb
+            include ../particles/footer
+
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js")
+            //- script(src="./assets/scripts/ui.common.js")

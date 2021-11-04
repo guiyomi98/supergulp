@@ -1,0 +1,53 @@
+//
+// List
+// --------------------------------------------------
+
+.list {
+
+}
+
+.list__item {
+    position: relative;
+    padding: 1.4rem;
+    padding-left: 9.6rem;
+    min-height: 6.8rem;
+    background-color: $white;
+    @include box-sizing(content-box);
+    border-radius: 1.2rem;
+    box-shadow: 0px 8px 12px -4px #b8b8d233;
+    margin-top: 1.6rem;
+    .title {
+        font-size: $font-size-base;
+    }
+    .img {
+        position: absolute;
+        top: 50%;
+        left: 1.4rem;
+        display: inline-block;
+        width: 6.8rem;
+        height: 6.8rem;
+        padding: 1.4rem;
+        border-radius: .8rem;
+        background-color: $brand-tertiary;
+        transform: translateY(-50%);
+    }
+    .name {
+        color: $gray-font;
+        font-size: $small;
+        line-height: $line-height-text;
+    }
+    .price {
+        color: $brand-primary;
+        font: {
+            size: $regular;
+            weight: $font-weight-medium;
+        }
+    }
+    .tag {
+        color: $orange;
+        padding: .2rem 1rem;
+        margin-left: .4rem;
+        border-radius: 1rem;
+        background-color: $brand-secondary;
+    }
+}

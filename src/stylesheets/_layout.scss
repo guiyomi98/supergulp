@@ -36,6 +36,7 @@
 
 .section {
     padding: 0 $area-padd;
+    background-color: $white;
     .title {
         font-size: $font-size-medium;
         line-height: $line-height-text;
@@ -43,7 +44,6 @@
     .text {
         font-size: $font-size-base;
         line-height: $line-height-text;
-
     }
 }
 
