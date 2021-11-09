@@ -2,6 +2,6 @@
 "use strict";var _ui=require("./ui"),one=(0,_ui.random)(10),two=(0,_ui.random)(20);console.log("".concat(one," ").concat(two));
 
 },{"./ui":2}],2:[function(require,module,exports){
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.random=void 0;var random=function(r){return Math.floor(Math.random()*r)};exports.random=random;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.random=void 0,console.log("ui was working");var random=function(o){return Math.floor(Math.random()*o)};exports.random=random;
 
 },{}]},{},[1]);

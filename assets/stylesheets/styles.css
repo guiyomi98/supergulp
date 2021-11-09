@@ -328,7 +328,7 @@ a {
 }
 a:hover, a:focus {
   color: #1F1F39;
-  text-decoration: none;
+  text-decoration: inherit;
 }
 
 img {
@@ -420,6 +420,8 @@ h2, .h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  max-width: 720px;
+  margin: 0 auto;
 }
 .container.fullpage {
   -webkit-box-align: center;
@@ -429,6 +431,7 @@ h2, .h2 {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+  padding: 0 2rem;
   background-color: #FFFFFF;
 }
 
@@ -594,25 +597,6 @@ button {
   width: 100%;
   height: 100%;
   border-radius: 12px;
-}
-.input input:not(:-moz-placeholder-shown) + label {
-  --label-y: -17px;
-  --label-scale: .8;
-  --label-color: $gray-base;
-}
-.input input:not(:-ms-input-placeholder) + label {
-  --label-y: -17px;
-  --label-scale: .8;
-  --label-color: $gray-base;
-}
-.input input:not(:placeholder-shown) + label, .input input:focus + label {
-  --label-y: -17px;
-  --label-scale: .8;
-  --label-color: $gray-base;
-}
-.input input:focus + label + .cursor {
-  -webkit-animation: cursor 1s ease infinite;
-          animation: cursor 1s ease infinite;
 }
 .input .delete {
   position: absolute;
@@ -863,14 +847,49 @@ button {
   pointer-events: none;
 }
 
+.btn-default {
+  color: #3D5CFF;
+  border: 1px solid #3D5CFF;
+}
+
 .btn-primary {
   color: #FFFFFF;
   background-color: #3D5CFF;
 }
 
+.btn-close {
+  position: absolute;
+  top: 6rem;
+  right: 1.6rem;
+  display: block;
+  color: #858597;
+  padding: 1.3rem 1rem;
+}
+
 .btn-block {
   display: block;
   width: 100%;
+}
+
+.btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  margin-top: 6rem;
+}
+.btn-group > .btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 0.75rem;
+}
+.btn-group > .btn:first-child {
+  margin-left: 0;
+}
+.btn-group > .btn:last-child {
+  margin-right: 0;
 }
 
 .list__item {
@@ -932,6 +951,39 @@ button {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.slide {
+  width: 100%;
+  overflow-y: hidden;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
+}
+
+.slide__innr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300%;
+  overflow-x: auto;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+}
+.slide__innr li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .pavigation {
@@ -1013,16 +1065,10 @@ button {
   -webkit-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out;
 }
+.illust.color2 {
+  background-color: #D9F4F1;
+}
 .illust img {
   display: inline-block;
   width: 100%;
-}
-
-.btn-close {
-  position: absolute;
-  top: 6rem;
-  right: 1.6rem;
-  display: block;
-  color: #858597;
-  padding: 1.3rem 1rem;
 }
