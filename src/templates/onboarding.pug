@@ -10,17 +10,39 @@ html(lang="ko")
     body
         .wrapper
             article.container.fullpage
-                h2.invisible onboard step 1
-                section.section
-                    span.illust
-                        img(src="./assets/images/illust/onboard01.png" alt="Numerous free trial courses" title="Numerous free trial courses")
-                    h3.title guiyomi98 gulp 프로젝트 테스트중입니다
-                    p.text Free for you to find your way to learning!!!
-                    ul.pavigation
-                        li.is-active
-                            a step 1
+                h2.invisible onboarding
+                section.slide
+                    ul.slide__innr
                         li
-                            a step 1
+                            section.section
+                                span.illust
+                                    img(src="./assets/images/illust/onboard01.png" alt="Keep it simple, stupid." title="Keep it simple, stupid.")
+                                h3.title Keep it simple, stupid.
+                                p.text 어떤 바보라도 컴퓨터가 이해할 수 있는 코드를 작성할 수 있습니다. 훌륭한 프로그래머는 인간이 이해할 수 있는 코드를 작성합니다.
+                                a.btn-close(href="/member.html" role="button") skip
                         li
-                            a step 1
-                    button.btn-close(type="button") skip
+                            section.section
+                                span.illust.color2
+                                    img(src="./assets/images/illust/onboard02.png")
+                                h3.title together building
+                                p.text 협업 논리기반
+                                a.btn-close(href="/member.html" role="button") skip
+                        li
+                            section.section
+                                span.illust
+                                    img(src="./assets/images/illust/onboard03.png")
+                                h3.title Create your own study plan
+                                p.text Study according to the study plan, make study more motivated
+                ul.pavigation
+                    li.is-active
+                        a step 1
+                    - for (var x = 0; x < 2; x++)
+                        li
+                            a next step
+                div.btn-group
+                    a.btn.btn-primary(href="member.html" role="button")
+                        span Sign up
+                    button.btn.btn-default(type="button")
+                        span Log in
+
+        script(src="./assets/scripts/ui.js")

@@ -9,17 +9,11 @@
     border-radius: 6rem;
     background-color: #CDECFE;
     transition: background .2s ease-in-out;
+    &.color2 {
+        background-color: $white-green;
+    }
     img {
         display: inline-block;
         width: 100%;
     }
-}
-
-.btn-close {
-    position: absolute;
-    top: 6rem;
-    right: 1.6rem;
-    display: block;
-    color: #858597;
-    padding: 1.3rem 1rem;
 }

@@ -48,10 +48,26 @@
 
 // Alternate buttons
 // --------------------------------------------------
+.btn-default {
+  color: $brand-primary;
+  border: 1px solid $brand-primary;
+}
 
 .btn-primary {
   color: $white;
   background-color: $brand-primary;
+}
+
+
+// Functional buttons
+// --------------------------------------------------
+.btn-close {
+  position: absolute;
+  top: 6rem;
+  right: 1.6rem;
+  display: block;
+  color: #858597;
+  padding: 1.3rem 1rem;
 }
 
 
@@ -61,4 +77,33 @@
 .btn-block {
   display: block;
   width: 100%;
+}
+
+
+// Button groups
+// --------------------------------------------------
+
+// Make the div behave like a button
+.btn-group {
+// .btn-group-vertical {
+  display: flex;
+  width: 100% ;
+  vertical-align: middle; // match .btn alignment given font-size hack above
+  margin-top: 6rem;
+  > .btn {
+    flex: 1;
+    margin: 0 0.75rem;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    // &:hover,
+    // &:focus,
+    // &:active,
+    // &.active {
+    //   z-index: 2;
+    // }
+  }
 }

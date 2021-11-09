@@ -57,19 +57,19 @@ button {
         width: 100%;
         height: 100%;
         border-radius: $radius-base;
-        &:not(:placeholder-shown),
-        &:focus {
-            & + label {
-                --label-y: -17px;
-                --label-scale: .8;
-                --label-color: $gray-base;
-            }
-        }
-        &:focus {
-            & + label + .cursor {
-                animation: cursor 1s ease infinite;
-            }
-        }
+        // &:not(:placeholder-shown),
+        // &:focus {
+        //     & + label {
+        //         --label-y: -17px;
+        //         --label-scale: .8;
+        //         --label-color: $gray-base;
+        //     }
+        // }
+        // &:focus {
+        //     & + label + .cursor {
+        //         animation: cursor 1s ease infinite;
+        //     }
+        // }
     }
     .delete {
         position: absolute;

@@ -40,13 +40,13 @@ button {
 
 // Links
 a {
-  color: $link-color;
+  color: $text-color;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
+    color: $text-color;
+    text-decoration: inherit;
   }
 
   // &:focus {
