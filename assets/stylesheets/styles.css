@@ -350,7 +350,7 @@ html, body {
   line-height: 1;
   color: #1F1F39;
   height: 100%;
-  background-color: #F6F8FF;
+  background-color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
      -moz-text-size-adjust: none;
@@ -358,13 +358,28 @@ html, body {
           text-size-adjust: none;
 }
 
-.wrapper {
-  font-size: 1.4rem;
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h2, .h2 {
+  font-size: 3.29rem;
+}
+
+.subtext {
+  color: #B8B8D2;
+  font-size: 1.204rem;
+  line-height: 1.4;
 }
 
 /* Layout */
 .wrapper {
-  padding: 4.5rem 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.4rem;
+  background-color: #F0F0F2;
   overflow-x: hidden;
 }
 
@@ -380,8 +395,8 @@ html, body {
       -ms-flex-align: center;
           align-items: center;
   height: 4.5rem;
-  border-bottom: 1px solid #eee;
-  background-color: #fff;
+  border-bottom: 1px solid #F4F3FD;
+  background-color: #FFFFFF;
   z-index: 100;
 }
 .header .title {
@@ -393,6 +408,11 @@ html, body {
 }
 
 .container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -400,20 +420,38 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
+}
+.container.fullpage {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: #FFFFFF;
 }
 
 .section {
   padding: 0 2.4rem;
-  background-color: #fff;
+}
+.section.bg {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  background-color: #FFFFFF;
+  border-radius: 12px 12px 0 0;
 }
 .section .title {
-  font-size: 2rem;
+  font-size: 2.1rem;
+  font-weight: 700;
   line-height: 1.4;
 }
 .section .text {
-  font-size: 1.4rem;
+  color: #858597;
+  font-size: 1.61rem;
   line-height: 1.4;
+  margin-top: 2rem;
 }
 
 .aside {
@@ -425,7 +463,7 @@ html, body {
 }
 
 .gnb {
-  background-color: #fff;
+  background-color: #FFFFFF;
   padding: 1rem 0 2.5rem;
   border-radius: 1.5rem 1.5rem 0 0;
   -webkit-box-shadow: 0px 2px 15px rgba(184, 184, 210, 0.5);
@@ -482,7 +520,6 @@ html, body {
           align-items: center;
   height: 6rem;
   font-size: 1.4rem;
-  color: #B8B8D2;
   border-radius: 50%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -501,14 +538,12 @@ html, body {
   margin-bottom: 1rem;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
-  fill: #eee;
 }
 
 .footer {
-  color: #dadada;
+  color: #B8B8D2;
   text-align: center;
   padding: 10px 0;
-  border-top: 1px solid #eee;
   margin-top: 10px;
 }
 
@@ -527,7 +562,10 @@ input {
 
 label {
   display: inline-block;
+  color: #858597;
+  line-height: 1.4;
   max-width: 100%;
+  cursor: pointer;
 }
 
 button {
@@ -535,17 +573,18 @@ button {
 }
 
 .field {
+  margin-top: 24px;
+}
+
+.input {
   position: relative;
   height: 50px;
-  background: #fff;
+  background: #FFFFFF;
   border: 1px solid #B8B8D2;
   border-radius: 12px;
   overflow: hidden;
 }
-.field + .field {
-  margin-top: 24px;
-}
-.field input {
+.input input {
   padding: 0;
   position: absolute;
   left: 0;
@@ -556,26 +595,26 @@ button {
   height: 100%;
   border-radius: 12px;
 }
-.field input:not(:-moz-placeholder-shown) + label {
+.input input:not(:-moz-placeholder-shown) + label {
   --label-y: -17px;
   --label-scale: .8;
   --label-color: $gray-base;
 }
-.field input:not(:-ms-input-placeholder) + label {
+.input input:not(:-ms-input-placeholder) + label {
   --label-y: -17px;
   --label-scale: .8;
   --label-color: $gray-base;
 }
-.field input:not(:placeholder-shown) + label, .field input:focus + label {
+.input input:not(:placeholder-shown) + label, .input input:focus + label {
   --label-y: -17px;
   --label-scale: .8;
   --label-color: $gray-base;
 }
-.field input:focus + label + .cursor {
+.input input:focus + label + .cursor {
   -webkit-animation: cursor 1s ease infinite;
           animation: cursor 1s ease infinite;
 }
-.field .delete {
+.input .delete {
   position: absolute;
   top: 0;
   right: 0;
@@ -583,7 +622,7 @@ button {
   height: 48px;
   text-align: center;
 }
-.field .delete .icon {
+.input .delete .icon {
   display: block;
   position: absolute;
   top: 50%;
@@ -596,7 +635,7 @@ button {
           transform: translate(-50%, -50%);
   background: #C4C4C4;
 }
-.field .delete .icon::before, .field .delete .icon::after {
+.input .delete .icon::before, .input .delete .icon::after {
   content: "";
   display: block;
   position: absolute;
@@ -606,15 +645,15 @@ button {
   height: 2px;
   background-color: #fff;
 }
-.field .delete .icon::before {
+.input .delete .icon::before {
   -webkit-transform: translate(-50%, -50%) rotate(45deg);
           transform: translate(-50%, -50%) rotate(45deg);
 }
-.field .delete .icon::after {
+.input .delete .icon::after {
   -webkit-transform: translate(-50%, -50%) rotate(135deg);
           transform: translate(-50%, -50%) rotate(135deg);
 }
-.field .cursor {
+.input .cursor {
   position: absolute;
   height: 15px;
   width: 1px;
@@ -629,8 +668,8 @@ button {
   transition: transform var(--cursor-duration, 0.1s);
   transition: transform var(--cursor-duration, 0.1s), -webkit-transform var(--cursor-duration, 0.1s);
 }
-.field .line,
-.field .tick {
+.input .line,
+.input .tick {
   display: block;
   pointer-events: none;
   position: absolute;
@@ -640,9 +679,9 @@ button {
   -webkit-transition: opacity 0s linear var(--tick-opacity-delay, 0.5s);
   transition: opacity 0s linear var(--tick-opacity-delay, 0.5s);
 }
-.field .line svg,
-.field .tick svg {
-  stroke: #eee;
+.input .line svg,
+.input .tick svg {
+  stroke: #F4F3FD;
   stroke-width: 1;
   fill: none;
   display: block;
@@ -655,13 +694,13 @@ button {
   transition: transform var(--line-x-duration, 0s) ease, stroke 0.3s;
   transition: transform var(--line-x-duration, 0s) ease, stroke 0.3s, -webkit-transform var(--line-x-duration, 0s) ease;
 }
-.field .line {
+.input .line {
   overflow: hidden;
   width: 100%;
   -webkit-transform-origin: 0 50%;
           transform-origin: 0 50%;
 }
-.field .tick {
+.input .tick {
   --left: 100%;
   --bottom: -1px;
   --width: 32px;
@@ -669,14 +708,14 @@ button {
   --x: -16px;
   --opacity: 0;
 }
-.field .tick svg {
-  stroke: #eee;
+.input .tick svg {
+  stroke: #F4F3FD;
   stroke-dasharray: 17 81;
   stroke-dashoffset: var(--tick-offset, 34px);
   -webkit-transition: stroke-dashoffset 0.5s ease var(--tick-delay, 0s), stroke 0.5s ease var(--tick-delay, 0s);
   transition: stroke-dashoffset 0.5s ease var(--tick-delay, 0s), stroke 0.5s ease var(--tick-delay, 0s);
 }
-.field .clear {
+.input .clear {
   position: relative;
   padding: 0;
   margin: 12px 12px 12px 0;
@@ -688,7 +727,7 @@ button {
   -webkit-transform: scale(var(--clear-scale)) translateZ(0);
           transform: scale(var(--clear-scale)) translateZ(0);
 }
-.field .clear:before {
+.input .clear:before {
   content: "";
   position: absolute;
   top: 0;
@@ -701,7 +740,7 @@ button {
   -webkit-transform: translateX(var(--clear-swipe)) scaleX(var(--clear-swipe-x)) translateZ(0);
           transform: translateX(var(--clear-swipe)) scaleX(var(--clear-swipe-x)) translateZ(0);
 }
-.field .clear svg {
+.input .clear svg {
   display: block;
   position: relative;
   z-index: 1;
@@ -717,11 +756,11 @@ button {
   -webkit-transform: translateX(var(--clear-x)) rotate(var(--clear-rotate)) translateZ(0);
           transform: translateX(var(--clear-x)) rotate(var(--clear-rotate)) translateZ(0);
 }
-.field .clear svg path {
+.input .clear svg path {
   -webkit-transition: stroke 0.2s;
   transition: stroke 0.2s;
 }
-.field .clear svg path.arrow {
+.input .clear svg path.arrow {
   stroke: #1F1F39;
   stroke-dasharray: 4px;
   stroke-dashoffset: var(--clear-arrow-offset);
@@ -729,14 +768,14 @@ button {
   -webkit-transform: translate(var(--clear-arrow-x), var(--clear-arrow-y)) translateZ(0);
           transform: translate(var(--clear-arrow-x), var(--clear-arrow-y)) translateZ(0);
 }
-.field .clear svg path.arrow:last-child {
+.input .clear svg path.arrow:last-child {
   stroke-dashoffset: var(--clear-arrow-offset-second);
 }
-.field .clear svg path.line {
+.input .clear svg path.line {
   stroke-dasharray: var(--clear-line-array) 28.5px;
   stroke-dashoffset: var(--clear-line-offset);
 }
-.field .clear svg path.long {
+.input .clear svg path.long {
   stroke: #1F1F39;
   stroke-dasharray: var(--clear-long-array) 15.5px;
   stroke-dashoffset: var(--clear-long-offset);
@@ -744,253 +783,94 @@ button {
   -webkit-transform: translate(var(--clear-arrow-x), var(--clear-arrow-y)) translateZ(0);
           transform: translate(var(--clear-arrow-x), var(--clear-arrow-y)) translateZ(0);
 }
-.field .clear:hover {
+.input .clear:hover {
   --b: $gray-lighter;
 }
 
-.label {
-  color: #B8B8D2;
-  font-size: 1.4rem;
-  margin-bottom: 5px;
-}
-.label ~ .label {
-  margin-top: 24px;
-}
-
-.radio,
-.checkbox,
-.switch {
-  --c-active: #275EFE;
-  --c-active-inner: #FFFFFF;
-  --c-default: #D2D6E9;
-  --c-default-dark: #C7CBDF;
-  --c-black: #1B1B22;
+.checkbox {
   position: relative;
-  border-radius: var(--border-radius, 12px) var(--border-radius-corner, 12px) var(--border-radius, 12px) var(--border-radius, 12px);
+  display: block;
+  padding-left: 2.3rem;
 }
-.radio input,
-.checkbox input,
-.switch input {
+.checkbox input {
+  position: absolute;
+  top: 0;
+  left: 0;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   outline: none;
   border: none;
-  background: var(--input-background, none);
+  background: transparent;
   display: block;
   cursor: pointer;
   margin: 0;
   padding: 0;
   border-radius: inherit;
-  width: var(--input-width, 24px);
-  height: var(--input-height, 24px);
 }
-.radio svg,
-.checkbox svg,
-.switch svg {
+.checkbox input::before {
+  content: "";
   display: block;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid #B8B8D2;
+}
+.checkbox input::after {
+  display: none;
+  content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  pointer-events: none;
-  fill: var(--c-active-inner);
-  -webkit-transform: scale(1.01) translateZ(0);
-          transform: scale(1.01) translateZ(0);
+  top: 50%;
+  left: 50%;
+  width: 0.45rem;
+  height: 0.7rem;
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  border-color: #3D5CFF;
+  -webkit-transform: translate(-50%, -4.5px) rotate(45deg);
+          transform: translate(-50%, -4.5px) rotate(45deg);
 }
-
-.radio input,
-.checkbox input {
-  --border-color: var(--c-default);
-  --border-width: 2px;
-  -webkit-box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
-          box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
+.checkbox input:checked::before {
+  background-color: #EAEAFF;
 }
-.radio input:checked,
-.checkbox input:checked {
-  --border-color: var(--c-active);
-}
-.radio input:not(:checked),
-.checkbox input:not(:checked) {
-  -webkit-transition: -webkit-box-shadow 0.25s;
-  transition: -webkit-box-shadow 0.25s;
-  transition: box-shadow 0.25s;
-  transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
-}
-.radio input:not(:checked):hover,
-.checkbox input:not(:checked):hover {
-  --border-width: 3px;
-  --border-color: var(--c-active);
-}
-
-.radio input:checked {
-  --border-width: 6.75px;
-}
-.radio input + svg {
-  --top-y: 0;
-  --dot-y: -17px;
-  --drop-y: -14px;
-  --top-s-x: 1.75;
-  --top-s-y: 1;
-}
-.radio input + svg .top {
-  -webkit-transform-origin: 12px -12px;
-          transform-origin: 12px -12px;
-  -webkit-transform: translateY(var(--top-y)) scale(var(--top-s-x), var(--top-s-y)) translateZ(0);
-          transform: translateY(var(--top-y)) scale(var(--top-s-x), var(--top-s-y)) translateZ(0);
-}
-.radio input + svg .dot {
-  -webkit-transform: translateY(var(--dot-y)) translateZ(0);
-          transform: translateY(var(--dot-y)) translateZ(0);
-}
-.radio input + svg .drop {
-  -webkit-transform: translateY(var(--drop-y)) translateZ(0);
-          transform: translateY(var(--drop-y)) translateZ(0);
-}
-
-.checkbox {
-  --border-radius: 5px;
-  --border-radius-corner: 5px;
-}
-.checkbox input:checked {
-  --border-width: 12px;
-}
-.checkbox input:checked + svg {
-  --tick-offset: 46.5px;
-}
-.checkbox input + svg {
-  --dot-x: 14px;
-  --dot-y: -14px;
-  --dot-s: 1;
-  --tick-offset: 20.5px;
-  --tick-array: 16.5px;
-  --tick-s: 1;
-  --drop-s: 1;
-}
-.checkbox input + svg .tick {
-  fill: none;
-  stroke-width: 3px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke: var(--c-active-inner);
-  stroke-dasharray: var(--tick-array) 33px;
-  stroke-dashoffset: var(--tick-offset);
-  -webkit-transform-origin: 10.5px 16px;
-          transform-origin: 10.5px 16px;
-  -webkit-transform: scale(var(--tick-s)) translateZ(0);
-          transform: scale(var(--tick-s)) translateZ(0);
-}
-.checkbox input + svg .dot {
-  -webkit-transform-origin: 10.5px 15.5px;
-          transform-origin: 10.5px 15.5px;
-  -webkit-transform: translate(var(--dot-x), var(--dot-y)) scale(var(--dot-s)) translateZ(0);
-          transform: translate(var(--dot-x), var(--dot-y)) scale(var(--dot-s)) translateZ(0);
-}
-.checkbox input + svg .drop {
-  -webkit-transform-origin: 25px -1px;
-          transform-origin: 25px -1px;
-  -webkit-transform: scale(var(--drop-s)) translateZ(0);
-          transform: scale(var(--drop-s)) translateZ(0);
-}
-
-.switch {
-  --input-width: 38px;
-}
-.switch input {
-  --input-background: var(--c-default);
-}
-.switch input:checked {
-  --input-background: var(--c-active);
-}
-.switch input:checked + svg {
-  --default-s: 0;
-  --default-x: 8px;
-  --dot-s: 1;
-  --dot-x: 0px;
-}
-.switch input + svg {
-  --input-background: var(--c-default);
-  --default-s: 1;
-  --default-x: 0px;
-  --dot-s: 0;
-  --dot-x: -8px;
-}
-.switch .default {
-  -webkit-transform-origin: 12px 12px;
-          transform-origin: 12px 12px;
-  -webkit-transform: translateX(var(--default-x)) scale(var(--default-s)) translateZ(0);
-          transform: translateX(var(--default-x)) scale(var(--default-s)) translateZ(0);
-}
-.switch .dot {
-  -webkit-transform-origin: 26px 12px;
-          transform-origin: 26px 12px;
-  -webkit-transform: translateX(var(--dot-x)) scale(var(--dot-s)) translateZ(0);
-          transform: translateX(var(--dot-x)) scale(var(--dot-s)) translateZ(0);
+.checkbox input:checked::after {
+  display: block;
 }
 
 .btn {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  border: none;
-  position: relative;
-  background: var(--c-black);
-  color: #fff;
-  outline: none;
-  cursor: pointer;
-  font-size: 14px;
-  line-height: 21px;
-  font-weight: 600;
-  display: block;
-  width: 132px;
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 1.61rem;
   text-align: center;
-  border-radius: 7px;
-  margin: 0 auto;
-  padding: 12px 0;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  padding: 1.8rem 0;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  white-space: nowrap;
 }
-.btn span {
-  position: relative;
-  z-index: 1;
+.btn:hover, .btn:focus, .btn.focus {
+  text-decoration: none;
 }
-.btn svg {
+.btn:active, .btn.active {
+  outline: 0;
+  background-image: none;
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+  pointer-events: none;
+}
+
+.btn-primary {
+  color: #FFFFFF;
+  background-color: #3D5CFF;
+}
+
+.btn-block {
   display: block;
   width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  fill: var(--c-active);
-}
-.btn svg circle {
-  -webkit-transition: -webkit-transform var(--duration, 0.25s) ease-out;
-  transition: -webkit-transform var(--duration, 0.25s) ease-out;
-  transition: transform var(--duration, 0.25s) ease-out;
-  transition: transform var(--duration, 0.25s) ease-out, -webkit-transform var(--duration, 0.25s) ease-out;
-}
-.btn svg circle.top-left {
-  -webkit-transform: translate(var(--spacing, -16px), var(--spacing, -40px));
-          transform: translate(var(--spacing, -16px), var(--spacing, -40px));
-}
-.btn svg circle.middle-bottom {
-  -webkit-transform: translate(var(--spacing, 8px), var(--spacing, 40px));
-          transform: translate(var(--spacing, 8px), var(--spacing, 40px));
-}
-.btn svg circle.top-right {
-  -webkit-transform: translate(var(--spacing, 40px), var(--spacing, -40px));
-          transform: translate(var(--spacing, 40px), var(--spacing, -40px));
-}
-.btn svg circle.right-bottom {
-  -webkit-transform: translate(var(--spacing, 4px), var(--spacing, 40px));
-          transform: translate(var(--spacing, 4px), var(--spacing, 40px));
-}
-.btn svg circle.left-bottom {
-  -webkit-transform: translate(var(--spacing, -40px), var(--spacing, 40px));
-          transform: translate(var(--spacing, -40px), var(--spacing, 40px));
-}
-.btn:hover {
-  --spacing: 0;
-  --duration: .45s;
 }
 
 .list__item {
@@ -998,7 +878,7 @@ button {
   padding: 1.4rem;
   padding-left: 9.6rem;
   min-height: 6.8rem;
-  background-color: #fff;
+  background-color: #FFFFFF;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
   border-radius: 1.2rem;
@@ -1024,12 +904,11 @@ button {
 }
 .list__item .name {
   color: #B8B8D2;
-  font-size: 1.2rem;
   line-height: 1.4;
 }
 .list__item .price {
   color: #3D5CFF;
-  font-size: 1.6rem;
+  font-size: 2.1rem;
   font-weight: 500;
 }
 .list__item .tag {
@@ -1045,7 +924,7 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #dadada;
+  background-color: #B8B8D2;
   padding: 1rem;
 }
 
@@ -1053,6 +932,32 @@ button {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.pavigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5.3rem;
+}
+.pavigation li {
+  padding: 0.5rem;
+}
+.pavigation li.is-active a {
+  width: 2.8rem;
+  background-color: #3D5CFF;
+}
+.pavigation li a {
+  display: block;
+  width: 0.9rem;
+  height: 0.5rem;
+  font-size: 0;
+  border-radius: 0.5rem;
+  background-color: #EAEAFF;
+  cursor: pointer;
 }
 
 /* Utility classes */
@@ -1113,41 +1018,6 @@ button {
   width: 100%;
 }
 
-.title-001 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  line-height: 1.4;
-}
-
-.fullpage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-}
-
-.text-002 {
-  font-size: 1.6rem;
-  color: #858597;
-  line-height: 1.4;
-  margin-top: 2rem;
-}
-
 .btn-close {
   position: absolute;
   top: 6rem;
@@ -1155,27 +1025,4 @@ button {
   display: block;
   color: #858597;
   padding: 1.3rem 1rem;
-}
-
-.pavigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 5.3rem;
-}
-.pavigation li {
-  padding: 0.5rem;
-}
-.pavigation li.is-active a {
-  width: 2.8rem;
-  background-color: #3D5CFF;
-}
-.pavigation li a {
-  display: block;
-  width: 0.9rem;
-  height: 0.5rem;
-  font-size: 0;
-  border-radius: 0.5rem;
-  background-color: #EAEAFF;
-  cursor: pointer;
 }
