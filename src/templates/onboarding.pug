@@ -9,13 +9,13 @@ html(lang="ko")
         link(rel="stylesheet", href="./assets/stylesheets/styles.css", type="text/css")
     body
         .wrapper
-            article.container.onboard
-                h2.invisible#titlePg onboard step 1
-                section.section.fullpage
+            article.container.fullpage
+                h2.invisible onboard step 1
+                section.section
                     span.illust
                         img(src="./assets/images/illust/onboard01.png" alt="Numerous free trial courses" title="Numerous free trial courses")
-                    h3.title-001 guiyomi98 gulp 프로젝트 테스트중입니다
-                    p.text-002 Free for you to find your way to learning!!!
+                    h3.title guiyomi98 gulp 프로젝트 테스트중입니다
+                    p.text Free for you to find your way to learning!!!
                     ul.pavigation
                         li.is-active
                             a step 1
@@ -24,9 +24,3 @@ html(lang="ko")
                         li
                             a step 1
                     button.btn-close(type="button") skip
-
-            //- include ../particles/gnb
-            include ../particles/footer
-
-            script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js")
-            //- script(src="./assets/scripts/ui.common.js")

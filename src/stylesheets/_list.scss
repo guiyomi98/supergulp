@@ -32,14 +32,14 @@
         transform: translateY(-50%);
     }
     .name {
-        color: $gray-font;
-        font-size: $small;
+        color: $gray;
+        // font-size: $small;
         line-height: $line-height-text;
     }
     .price {
         color: $brand-primary;
         font: {
-            size: $regular;
+            size: $font-size-regular;
             weight: $font-weight-medium;
         }
     }

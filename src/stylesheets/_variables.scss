@@ -7,25 +7,21 @@ $sass-asset-helper: false !default;
 //== Colors
 //
 //## Base(Gray) and brand colors.
-
-$black:                  #1F1F39 !default;
-$gray-base:              #B8B8D2 !default; // font base
-$gray-darker:            #b9b9b9 !default;
-$gray-dark:              #bfbfbf !default;
-$gray:                   #dadada !default;
-$gray-light:             #e6e6e6 !default; // disabled
-$gray-lighter:           #eee !default;    // line color
-$gray-font:              #B8B8D2 !default;
-
-$white:                  #fff !default;
-$transparent:              transparent !default;
-$orange: #FF6905;
-
 $brand-primary:          #3D5CFF !default;
 $brand-secondary:        #FFEBF0 !default;
 $brand-tertiary:         #EAEAFF !default;
 
+$black:                  #1F1F39 !default;
+$gray-dark:              #858597 !default;
+$gray:                   #B8B8D2 !default;
+$gray-light:             #F4F3FD !default;
+$gray-lighter:           #F0F0F2 !default;
 
+$white:                  #FFFFFF !default;
+$orange:                 #FF6905 !default;
+$green:                  #38C875 !default;
+
+ 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
@@ -52,10 +48,10 @@ $font-family-base: 'Spoqa Han Sans Neo', 'Malgun Gothic', '맑은 고딕', Helve
 //** Font size
 $font-size-reset:         62.5% !default; // https://mikkeller.tistory.com/25
 $font-size-base:          1.4rem !default; //14px
-$font-size-large:         ceil(($font-size-base * 1.2)) !default;
-$font-size-medium:        ceil(($font-size-base * 1.1)) !default;
-$regular:                 1.6rem !default;
-$small:                   1.2rem !default;
+$font-size-large:         $font-size-base * 2.35 !default;
+$font-size-medium:        $font-size-base * 1.15 !default;
+$font-size-regular:       $font-size-base * 1.5 !default;
+$font-size-small:         $font-size-base * 0.86 !default;
 
 //** Font weight
 $font-weight-base:        400 !default;
@@ -64,6 +60,8 @@ $font-weight-bold:        700 !default;
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1 !default;
+//** `line-height` for use in heading title.
+$line-height-head:        1.2 !default;
 //** `line-height` for use in text paragraphs.
 $line-height-text:        1.4 !default;
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.

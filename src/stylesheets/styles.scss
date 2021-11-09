@@ -9,14 +9,16 @@
 
 //Core CSS
 @import "scaffolding";
-@import "type";
+@import "typo";
 @import "layout";
 @import "forms";
+@import "buttons";
 // @import "query";
 
 // Components
 @import "list";
 @import "tab";
+@import "pavigation";
 
 // Components w/ JavaScript
 

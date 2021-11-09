@@ -1,0 +1,34 @@
+doctype html
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title My Site - #{title}
+        link(rel="shortcut icon", href="#")
+        link(rel="stylesheet", href="./assets/stylesheets/styles.css", type="text/css")
+    body
+        .wrapper
+            article.container
+                section(style="padding: 8rem 2.4rem 2rem")
+                    h2 Sign Up
+                    p.subtext Enter your details below and free sign up
+                section.section.bg
+                    h3.invisible 회원가입
+                    form.form
+                        div.field
+                            label.label 이메일
+                            p.input
+                                input(type="text")
+                                button.delete(type="button")
+                                    i.icon 전체삭제
+                        div.field
+                            label.label 패스워드
+                            p.input
+                                input(type="password")
+                        div.field
+                            button.btn.btn-primary.btn-block(type="submit")
+                                span Creat account
+                        div.checkbox(style="margin-top:1.6rem")
+                            label By creating an account you have to agree with our them and condication.
+                                input(type="checkbox")

@@ -15,36 +15,6 @@
     }
 }
 
-.title-001 {
-    font: {
-        size: 2.2rem;
-        weight: 700;
-    }
-    line-height: $line-height-text;
-}
-
-.fullpage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.text-002 {
-    font: {
-        size: 1.6rem;
-    }
-    color: #858597;
-    line-height: $line-height-text;
-    margin-top: 2rem;
-}
-
 .btn-close {
     position: absolute;
     top: 6rem;
@@ -52,27 +22,4 @@
     display: block;
     color: #858597;
     padding: 1.3rem 1rem;
-}
-
-.pavigation {
-    display: flex;
-    margin-top: 5.3rem;
-    li {
-        padding: .5rem;
-        &.is-active {
-            a {
-                width: 2.8rem;
-                background-color: $brand-primary;
-            }
-        }
-        a {
-            display: block;
-            width: .9rem;
-            height: .5rem;
-            font-size: 0;
-            border-radius: .5rem;
-            background-color: $brand-tertiary;
-            cursor: pointer;
-        }
-    }
 }
