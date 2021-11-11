@@ -35,7 +35,9 @@ button {
 
 .field {
     margin-top: 24px;
-
+    label {
+        margin-bottom: .2rem;
+    }
 }
 
 // input styles
@@ -230,7 +232,7 @@ button {
     padding-left: 2.3rem;
     input {
         position: absolute;
-        top: 0;
+        top: 0.2rem;
         left: 0;
         appearance: none;
         outline: none;
@@ -272,5 +274,31 @@ button {
                 display: block;
             }
         }
+    }
+}
+
+.search {
+    padding: 1.4rem;
+    border-radius: $radius-base;
+    background-color: $gray-light;
+    input {
+        background-color: transparent;
+        &::placeholder {
+            color: $gray;
+        }
+    }
+    &.filter {
+        position: relative;
+    }
+    .icon {
+        margin-right: 1rem;
+    }
+    .btn-filter {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 5rem;
+        height: 5rem;
+        transform: translateY(-50%);
     }
 }

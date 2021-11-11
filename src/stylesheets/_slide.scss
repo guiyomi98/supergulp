@@ -6,6 +6,11 @@
     width: 100%;
     overflow-y: hidden;
     touch-action: pan-y;
+    .btn-skip {
+        position: absolute;
+        top: 6vw;
+        right: 1.6vw;
+    }
 }
 
 .slide__innr {
@@ -19,6 +24,5 @@
         display: flex;
         flex: 1;
         justify-content: center;
-        align-items: center;
     }
 }

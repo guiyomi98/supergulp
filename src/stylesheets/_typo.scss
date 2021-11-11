@@ -7,12 +7,16 @@
 // -------------------------
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.title {
     font-weight: $font-weight-medium;
     line-height: $line-height-head;
 }
 
-h2, .h2 { font-size: $font-size-large; }
+h2, .title--level1 { font-size: $font-size-large; } //33px
+h3, .title--level2 { font-size: $font-size-level2; } //24px
+h4, .title--level3 { font-size: $font-size-level3; } //18px
+h5, .title--level4 { font-size: $font-size-level4; }
+h6, .title--level5 { font-size: $font-size-level5; }
 
 .subtext {
     color: $gray;

@@ -61,15 +61,14 @@
 
 // Functional buttons
 // --------------------------------------------------
-.btn-close {
-  position: absolute;
-  top: 6rem;
-  right: 1.6rem;
+.btn-skip {
   display: block;
-  color: #858597;
+  color: $gray-dark;
   padding: 1.3rem 1rem;
 }
+.btn-filter {
 
+}
 
 // Block button
 // --------------------------------------------------

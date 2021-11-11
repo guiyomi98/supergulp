@@ -3,12 +3,25 @@
 // --------------------------------------------------
 
 /* tab */
-.tab {
+.tabs {
     display: flex;
-    background-color: $gray;
-    padding: 1rem;
-}
+    padding: 2rem 0;
+    li {
+        border-radius: 2rem;
+        a {
+            display: block;
+            width: 7.3rem;
+            height: 2.8rem;
+            color: $gray-dark;
+            line-height: 2.8rem;
+            text-align: center;
+        }
+        &.is-on {
+            background-color: $brand-primary;
+            a {
+                color: $white;
 
-.tab__item {
-    flex: 1;
+            }
+        }
+    }
 }

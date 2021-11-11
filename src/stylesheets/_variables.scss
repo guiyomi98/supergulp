@@ -11,16 +11,20 @@ $brand-primary:          #3D5CFF !default;
 $brand-secondary:        #FFEBF0 !default;
 $brand-tertiary:         #EAEAFF !default;
 
-$black:                  #1F1F39 !default;
-$gray-dark:              #858597 !default;
-$gray:                   #B8B8D2 !default;
-$gray-light:             #F4F3FD !default;
+$black:                  #1F1F39 !default; //text 1
+$gray-dark:              #858597 !default; //text 2
+$gray:                   #B8B8D2 !default; //text 3
+$gray-light:             #F4F3FD !default; //text 4
 $gray-lighter:           #F0F0F2 !default;
 
 $white:                  #FFFFFF !default;
 $orange:                 #FF6905 !default;
 $green:                  #38C875 !default;
+$purple:                 #9065BE !default;
 $white-green:            #D9F4F1 !default;
+$white-blue:             #CEECFE !default;
+$white-purple:           #EFE0FF !default;
+$white-purple2:          #F8F2FF !default;
 
  
 //== Scaffolding
@@ -49,10 +53,17 @@ $font-family-base: 'Spoqa Han Sans Neo', 'Malgun Gothic', '맑은 고딕', Helve
 //** Font size
 $font-size-reset:         62.5% !default; // https://mikkeller.tistory.com/25
 $font-size-base:          1.4rem !default; //14px
+
 $font-size-large:         $font-size-base * 2.35 !default;
 $font-size-medium:        $font-size-base * 1.15 !default;
 $font-size-regular:       $font-size-base * 1.5 !default;
 $font-size-small:         $font-size-base * 0.86 !default;
+
+
+$font-size-level2:        $font-size-base * 1.7 !default;
+$font-size-level3:        $font-size-base * 1.3 !default;
+$font-size-level4:        $font-size-base * 1.2 !default;
+$font-size-level5:        $font-size-base * 1.1 !default;
 
 //** Font weight
 $font-weight-base:        400 !default;

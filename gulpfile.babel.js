@@ -24,7 +24,7 @@ const paths = {
     watch: "src/**/*.pug"
   },
   font: {
-    src: "src/fonts/*",
+    src: "src/fonts/*", 
     dist: "dist/assets/fonts"
   },
   img: {
@@ -64,7 +64,7 @@ const imgs = () =>
 const styles = () => 
   gulp
     .src(paths.scss.src)
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(autoprefixer({"overrideBrowserslist": ["last 2 versions"]}))
     .pipe(gulp.dest(paths.scss.dist))
 

@@ -11,11 +11,10 @@
     padding: 1.4rem;
     padding-left: 9.6rem;
     min-height: 6.8rem;
-    background-color: $white;
+    // background-color: $white;
     @include box-sizing(content-box);
     border-radius: 1.2rem;
     box-shadow: 0px 8px 12px -4px #b8b8d233;
-    margin-top: 1.6rem;
     .title {
         font-size: $font-size-base;
     }
@@ -49,5 +48,24 @@
         margin-left: .4rem;
         border-radius: 1rem;
         background-color: $brand-secondary;
+    }
+}
+
+.recommend {
+    display: flex;
+    li {
+        flex: 1;
+        min-height: 7.7rem;
+        border-radius: $radius-base;
+        background: $white-blue url(../images/illust/recommend02.png) no-repeat left bottom;
+        background-size: 117px auto;
+        + li {
+            margin-left: 1.5rem;
+            background-color: $white-purple;
+            span {
+                color: $purple;
+                background-color: $white-purple2;
+            }
+        }
     }
 }
