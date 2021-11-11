@@ -1,0 +1,23 @@
+//
+// Modal
+// --------------------------------------------------
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $overlay;
+}
+
+.modal__innr {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.6rem 2rem 3.4rem;
+    min-height: 60vh;
+    background-color: $white;
+    border-radius: $radius-base $radius-base 0 0;
+}

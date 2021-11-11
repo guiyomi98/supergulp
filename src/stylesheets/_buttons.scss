@@ -105,4 +105,15 @@
     //   z-index: 2;
     // }
   }
+  &.ratio5 {
+    > .btn {
+      &:first-child {
+        flex: 0.4;
+        margin-right: .5rem;
+      }
+      &:last-child {
+        margin-left: .5rem;
+      }
+    }
+  }
 }
