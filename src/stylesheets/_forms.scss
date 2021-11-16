@@ -306,7 +306,7 @@ button {
 // Range slider
 // -------------------------
 // ref: https://velog.io/@ordidxzero/bidirectional-html-input-range
-.slider {
+.ranger {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -314,44 +314,65 @@ button {
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 1.5rem;
+    padding: 1rem 0;
     input {
         width: calc(100% - 2rem);
-        top: 3rem;
+        top: 1rem;
         left: 1rem;
         position: absolute;
-        border: none;
+        border: 0;
+        pointer-events: none;
+        appearance: none;
+        z-index: 10;
+        opacity: 0;
+        &::-webkit-slider-thumb {
+            pointer-events: all;
+            width: 2.5rem;
+            height: 1.5rem;
+        }
     }
     .track {
         position: relative;
         width: 100%;
-        height: 0.5rem;
-        margin-top: 5rem;
-        background-color: #bdc3c7;
-        border-radius: 0.5rem;
+        height: 1px;
+        background-color: $gray;
     }
     .range {
         position: absolute;
-        top: 0;
-        bottom: 0;
+        top: -0.5px;
+        bottom: -0.5px;
         left: 0;
         right: 0;
-        background-color: #2c3e50;
-        border-radius: 0.5rem;
+        background-color: $brand-primary;
     }
     .thumb {
         position: absolute;
         top: 0;
-        transform: translateY(-0.25rem);
-        width: 1rem;
-        height: 1rem;
-        background-color: black;
+        transform: translateY(-50%);
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid $brand-primary;
+        background-color: $white;
         border-radius: 50%;
         &.left {
             left: 0;
+            &::after {
+                content: '$90';
+                position: absolute;
+                top: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
         } 
         &.right {
             right: 0;
+            &::after {
+                content: '$200';
+                position: absolute;
+                top: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
     }
       
