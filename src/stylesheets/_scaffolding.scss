@@ -26,6 +26,9 @@ textarea {
 }
 
 button {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
   border: 0;
   background-color: transparent;
 }

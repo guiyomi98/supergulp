@@ -9,9 +9,11 @@ html(lang="ko")
         link(rel="stylesheet", href="./assets/stylesheets/styles.css", type="text/css")
     body
         .wrapper
+            block content
             article.container
                 section(style="padding: 8rem 2.4rem 2rem")
-                    h2 Sign Up
+                    block title
+                        h2 Sign Up
                     p.subtext Enter your details below and free sign up
                 section.section.bg
                     h3.invisible 회원가입
@@ -34,3 +36,5 @@ html(lang="ko")
                                 input(type="checkbox")
                     p(style="margin-top:2.4rem")
                         a.text(href="#") Already have an account？
+
+            //- include ../particles/modal-alert

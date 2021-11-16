@@ -1,0 +1,65 @@
+doctype html
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title My Site - #{title}
+        link(rel="shortcut icon", href="#")
+        link(rel="stylesheet", href="./assets/stylesheets/styles.css", type="text/css")
+    body
+        .wrapper
+            include ../particles/header
+
+            article.container.login
+                h2.invisible#titlePg login page
+                section.section
+                    h3.title 로그인
+                    form.form
+                        label.label 이메일
+                        p.field
+                            input(type="text")
+                            button.delete(type="button")
+                                i.icon 전체삭제
+                            //- button.clear
+                            //-     svg(viewBox="0 0 24 24")
+                            //-         path.line(d="M2 2L22 22")
+                            //-         path.long(d="M9 15L20 4")
+                            //-         path.arrow(d="M13 11V7")
+                            //-         path.arrow(d="M17 11H13")
+                        label.label 패스워드
+                        p.field
+                            span.dots
+                            input(type="password")
+                            span.cursor
+                            span.line
+                                svg
+                                    use(xlink:href="#line")
+                            span.tick
+                                svg
+                                    use(xlink:href="#tick")
+                        button(type="submit" disabled)
+                            svg(viewBox="0 0 16 16")
+                                circle(stroke-opacity=".1" cx="8" cy="8" r="6")
+                                circle.load(cx="8" cy="8" r="6")
+                            span 확인
+                    label.radio
+                        input(type="radio" name="radio" value="1" checked)
+                        svg(viewBox="0 0 24 24" filter="url(#goo-light)")
+                            circle.top(cx="12" cy="-12" r="8")
+                            circle.dot(cx="12" cy="12" r="5")
+                            circle.drop(cx="12" cy="12" r="2")
+                    label.radio
+                        input(type="radio" name="radio" value="2")
+                        svg(viewBox="0 0 24 24" filter="url(#goo-light)")
+                            circle.top(cx="12" cy="-12" r="8")
+                            circle.dot(cx="12" cy="12" r="5")
+                            circle.drop(cx="12" cy="12" r="2")
+                section.section
+                    h3.title 테스트
+                    p.text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            include ../particles/gnb
+            include ../particles/footer
+
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js")
+            script(src="./assets/scripts/ui.common.js")

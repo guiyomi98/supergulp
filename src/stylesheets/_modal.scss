@@ -11,7 +11,7 @@
     background-color: $overlay;
 }
 
-.modal__innr {
+.modal__toast {
     position: absolute;
     left: 0;
     right: 0;
@@ -22,4 +22,34 @@
     margin: 0 auto;
     background-color: $white;
     border-radius: $radius-base $radius-base 0 0;
+    .btn-close {
+        top: 1.6rem;
+        left: 2.4rem;
+        width: 2.4rem;
+        height: 2.4rem;
+        @include icon-x(absolute, 1.8rem , 2px, $black);
+    }
+}
+
+.modal__alert {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    min-width: 290px;
+    background-color: $white;
+    border-radius: $radius-base;
+    transform: translate(-50%, -50%);
+    padding-bottom: 1.4rem;
+    
+    .btn-close {
+        left: 50%;
+        bottom: -2.4rem + (-4.4rem);
+        width: 4.4rem;
+        height: 4.4rem;
+        border: 1px solid rgba($white, .5);
+        border-radius: 100%;
+        background-color: rgba($white, .2);
+        transform: translateX(-50%);
+        @include icon-x(absolute, 2rem , 2px, $white);
+    }
 }

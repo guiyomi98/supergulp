@@ -2,9 +2,9 @@
 // List
 // --------------------------------------------------
 
-.list {
+// .list {
 
-}
+// }
 
 .list__item {
     position: relative;
@@ -77,5 +77,22 @@
     li {
         margin: .6rem;
 
+    }
+}
+
+.list-index {
+    display: flex;
+    justify-content: space-between;
+    li {
+        width: 2.8rem;
+        height: 2.8rem;
+        color: $white;
+        line-height: 2.8rem;
+        text-align: center;
+        background-color: $brand-tertiary;
+        border-radius: 100%;
+        &.is-active {
+            background-color: $brand-primary;
+        }
     }
 }

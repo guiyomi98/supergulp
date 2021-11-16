@@ -55,6 +55,7 @@
 
 .section {
     padding: 0 $area-padd;
+    margin-top: 2rem;
     &.bg {
         flex: auto;
         background-color: $white;
@@ -64,9 +65,6 @@
         color: $gray-dark;
         font-size: $font-size-base;
         line-height: $line-height-text;
-        margin-top: 2rem;
-    }
-    +.section {
         margin-top: 2rem;
     }
 }

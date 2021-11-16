@@ -303,10 +303,10 @@ button {
     }
 }
 
-// Range slider
+// Range slide bar
 // -------------------------
 // ref: https://velog.io/@ordidxzero/bidirectional-html-input-range
-.ranger {
+.rangebar {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -314,7 +314,7 @@ button {
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 1rem 0;
+    padding: 1rem 0 (1rem + $font-size-base);
     input {
         width: calc(100% - 2rem);
         top: 1rem;
@@ -369,12 +369,10 @@ button {
             &::after {
                 content: '$200';
                 position: absolute;
-                top: 2rem;
+                top: 2rem; 
                 left: 50%;
                 transform: translateX(-50%);
             }
         }
     }
-      
 }
-

@@ -1,0 +1,24 @@
+// icon X 
+// using close and delete icon 
+
+@mixin icon-x ($position ,$size, $weight, $color) {
+    position: absolute;
+    font-size: 0;
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $size;
+        height: $weight;
+        background-color: $color;
+    }
+    &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &::after {
+        transform: translate(-50%, -50%) rotate(135deg);
+    }
+}
