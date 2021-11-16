@@ -69,3 +69,13 @@
         }
     }
 }
+
+.list-tag {
+    display: flex;
+    flex-flow: wrap;
+    margin: -.6rem;
+    li {
+        margin: .6rem;
+
+    }
+}

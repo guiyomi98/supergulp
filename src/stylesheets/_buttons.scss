@@ -66,9 +66,24 @@
   color: $gray-dark;
   padding: 1.3rem 1rem;
 }
-.btn-filter {
-
+.btn-tag {
+    color: $gray-dark;
+    font: {
+        size: $font-size-small;
+        weight: $font-weight-base;
+    }
+    padding: .8rem 1.2rem;
+    background-color: $gray-light;
 }
+
+.is-on {
+    .btn-tag {
+        color: $white;
+        background-color: $brand-primary;
+    }
+}
+
+
 
 // Block button
 // --------------------------------------------------
