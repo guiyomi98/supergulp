@@ -2,6 +2,6 @@
 "use strict";var _ui=require("./ui"),one=(0,_ui.random)(10),two=(0,_ui.random)(20);console.log("".concat(one," ").concat(two));
 
 },{"./ui":2}],2:[function(require,module,exports){
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.random=void 0,console.log("ui was working");var random=function(o){return Math.floor(Math.random()*o)};exports.random=random;
+"use strict";var inputLeft=document.getElementById("inputLeft"),inputRight=document.getElementById("inputRight"),thumbLeft=document.querySelector(".thumb.left"),thumbRight=document.querySelector(".thumb.right"),range=document.querySelector(".range"),setLeftValue=function(t){var e=t.target,u=e.value,n=e.min,i=e.max;+inputRight.value-+u<10&&(e.value=+inputRight.value-10);var a=(+e.value-+n)/(+i-+n)*100;thumbLeft.style.left="".concat(a,"%"),range.style.left="".concat(a,"%")},setRightValue=function(t){var e=t.target,u=e.value,n=e.min,i=e.max;+u-+inputLeft.value<10&&(e.value=+inputLeft.value+10);var a=(+e.value-+n)/(+i-+n)*100;thumbRight.style.right="".concat(100-a,"%"),range.style.right="".concat(100-a,"%")};inputLeft&&inputRight&&(inputLeft.addEventListener("input",setLeftValue),inputRight.addEventListener("input",setRightValue)),console.log("ui was working");
 
 },{}]},{},[1]);
