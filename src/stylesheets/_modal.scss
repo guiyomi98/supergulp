@@ -16,8 +16,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 1.6rem 2rem 3.4rem;
+    padding: 1.6rem 0 3.4rem;
+    max-width: $mobile-width;
     min-height: 60vh;
+    margin: 0 auto;
     background-color: $white;
     border-radius: $radius-base $radius-base 0 0;
 }

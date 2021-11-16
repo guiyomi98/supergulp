@@ -38,7 +38,7 @@
     bottom: 0;
     display: flex;
     flex-direction: column;
-    max-width: 720px;
+    max-width: $mobile-width;
     margin: 0 auto;
     &.full {
         align-items: center;
