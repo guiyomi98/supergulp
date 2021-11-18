@@ -9,7 +9,6 @@
     font-size: $font-size-base;
     background-color: $gray-lighter;
     overflow-x: hidden;
-    // padding: 0 2.4rem;
 }
 
 .header {
@@ -38,8 +37,10 @@
     bottom: 0;
     display: flex;
     flex-direction: column;
+    width: 100%;
     max-width: $mobile-width;
     margin: 0 auto;
+    overflow-x: hidden;
     &.full {
         align-items: center;
         justify-content: center;

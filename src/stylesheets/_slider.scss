@@ -1,0 +1,52 @@
+//
+// Slider
+// --------------------------------------------------
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    .btn-skip {
+        position: absolute;
+        top: 6vw;
+        right: 1.6vw;
+    }
+    .illust {
+        display: block;
+        max-width: 260px;
+        margin: 0 auto 3.4rem;
+        border-radius: 6rem;
+        transition: background .2s ease-in-out;
+        &.color1 {
+            background-color: $white-blue;
+        }
+        &.color2 {
+            background-color: $white-green;
+        }
+        img {
+            display: inline-block;
+            width: 100%;
+        }
+    }
+    
+    .text {
+        color: $gray-dark;
+        font-size: $font-size-base;
+        line-height: $line-height-text;
+        margin-top: 2rem;
+    }
+}
+
+.slider__list {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow-x: visible;
+    transition-property: transform;
+    li {
+        flex: 1;
+    }
+}
