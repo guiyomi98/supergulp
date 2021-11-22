@@ -1,28 +1,31 @@
 h2.invisible onboarding
-div.slider#slider
+section.slider#slider
+    //- h3.invisible slider
     ul.slider__list
         li
             span.illust.color1
-                img(src="./assets/images/illust/onboard01.png" alt="Keep it simple, stupid." title="Keep it simple, stupid.")
-            h4.title Keep it simple, stupid.
-            p.text 어떤 바보라도 컴퓨터가 이해할 수 있는 코드를 작성할 수 있습니다. 훌륭한 프로그래머는 인간이 이해할 수 있는 코드를 작성합니다.
+                img(src="./assets/images/illust/onboard01.png" alt="" title="TEST")
+            h4.title PORTFOLIO TEST
+            p.text 상단에 skip 버튼을 클릭하시면 더 많은 페이지를 볼 수 있습니다. 자세한 프로젝트 소스는 
+                a(href="https://github.com/guiyomi98" target="_black" title="https://github.com/guiyomi98") 깃허브
+                span 에서 확인 가능합니다.
         li
             span.illust.color2
-                img(src="./assets/images/illust/onboard02.png")
-            h4.title Build together.
-            p.text 유지 보수와 원활한 협업을 위해 노력합니다. 작성한 코드가 잘 전달될 수 있게 코드 정렬, 일관된 논리와 문서 작업에 최선을 다합니다.
+                img(src="./assets/images/illust/onboard02.png" alt="Keep it simple, stupid." title="Keep it simple, stupid.")
+            h4.title Keep it simple, stupid.
+            p.text 어떤 바보라도 컴퓨터가 이할 수 있는 코드를 작성할 수 있습니다. 훌륭한 프로그래머는 인간이 이해할 수 있는 코드를 작성합니다.
         li
             span.illust
                 img(src="./assets/images/illust/onboard03.png")
-            //- h4.title Create only own study plan
-            //- p.text Study according to the study plan, make study more motivated 통일성, 일관성
-//- ul.pavigation
-//-     li.is-active
-//-         a step 1
-//-     - for (var x = 0; x < 2; x++)
-//-         li
-//-             a next step 
-//- a.btn-skip(href="./member.html" role="button") skip
+            h4.title Build together.
+            p.text 유지 보수와 원활한 협업을 위해 노력합니다. 작성한 코드가 잘 전달될 수 있게 코드 정렬, 일관된 논리와 문서 작업에 최선을 다합니다.
+    ul.pavigation
+        li.is-active
+            a step 1
+        - for (var x = 0; x < 2; x++)
+            li
+                a next step 
+    a.btn-skip(href="./member.html" role="button") skip
 div.btn-group.hidden
     a.btn.btn-primary(href="/./member.html" role="button")
         span Sign up

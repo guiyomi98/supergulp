@@ -261,6 +261,6 @@ filterTabs.addEventListener("click", (event) => {
 
   if (event.target.classList.contains("filter-button")) {
     root.style.setProperty("--translate-filters-slider", targetTranslateValue);
-    handleActiveTab(filterButtons, event, "filter-active");
+    handleActiveTab(filterButtons, event, "filter-active");                       
   }
 });

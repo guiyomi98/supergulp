@@ -6,11 +6,26 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-
+    padding-top: 1.2rem + (1.4rem + 1.3rem + 1rem);
+    // skip 버튼
     .btn-skip {
         position: absolute;
-        top: 6vw;
-        right: 1.6vw;
+        top: 0;
+        right: 0;
+    }
+}
+
+.slider__list {
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: left .2s ease-in-out;
+    li {
+        flex: 1;
+        height: 100%;
     }
     .illust {
         display: block;
@@ -35,18 +50,5 @@
         font-size: $font-size-base;
         line-height: $line-height-text;
         margin-top: 2rem;
-    }
-}
-
-.slider__list {
-    position: absolute;
-    display: flex;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow-x: visible;
-    transition-property: transform;
-    li {
-        flex: 1;
     }
 }
