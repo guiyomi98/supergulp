@@ -1,5 +1,3 @@
-import { random } from './ui'
-
 const inputLeft = document.getElementById("inputLeft");
 const inputRight = document.getElementById("inputRight");
 

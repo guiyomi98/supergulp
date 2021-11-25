@@ -7,21 +7,18 @@
     justify-content: center;
     margin-top: 5.3rem;
     li {
-        padding: .5rem;
+        display: block;
+        width: .9rem;
+        height: .5rem;
+        margin: .5rem;
+        font-size: 0;
+        border-radius: .5rem;
+        background-color: $brand-tertiary;
+        cursor: pointer;
+        transition: width .2s ease-in-out;
         &.is-active {
-            a {
-                width: 2.8rem;
-                background-color: $brand-primary;
-            }
-        }
-        a {
-            display: block;
-            width: .9rem;
-            height: .5rem;
-            font-size: 0;
-            border-radius: .5rem;
-            background-color: $brand-tertiary;
-            cursor: pointer;
+            width: 2.8rem;
+            background-color: $brand-primary;
         }
     }
 }
