@@ -53,18 +53,39 @@
 
 .recommend {
     display: flex;
+    margin-top: 2rem;
     li {
+        position: relative;
         flex: 1;
         min-height: 7.7rem;
         border-radius: $radius-base;
         background: $white-blue url(../images/illust/recommend02.png) no-repeat left bottom;
         background-size: 117px auto;
+        span {
+            position: absolute;
+            right: 0;
+            bottom: 1rem;
+            padding: 0 .5rem 0 .8rem;
+            border-radius: $radius-base 0 0 $radius-base;
+            line-height: $line-height-text;
+        }
         + li {
             margin-left: 1.5rem;
+            
+            
+        }
+        &.color2 {
             background-color: $white-purple;
             span {
                 color: $purple;
                 background-color: $white-purple2;
+            }
+        }
+        &.color1 {
+            background-color:  $white-blue;
+            span {
+                color: $brand-primary;
+                background-color: $brand-tertiary;
             }
         }
     }
