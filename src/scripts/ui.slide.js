@@ -69,7 +69,8 @@ const next = (e) => {
   let limit = `-${widthList - width}`;
 
   if (left < limit) {
-    left = limit;
+    // left = limit;
+    location.href="member.html";
   }
   document.querySelector('.'+ id + '__list').style.left = `${left}px`;
 }
