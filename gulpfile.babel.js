@@ -7,11 +7,11 @@ import del             from "del"
 import webserver       from "gulp-webserver"
 import image           from "gulp-image"
 import autoprefixer    from "gulp-autoprefixer"
-import minicss         from "gulp-csso"
+import concat          from "gulp-concat"
 import ghpages         from "gulp-gh-pages"
-import rename          from "gulp-rename"
 import bro             from "gulp-bro"
 import babelify        from "babelify"
+import pretty          from "gulp-pretty-html"
 
 const sass = require('gulp-sass')(require('sass'))
 
@@ -24,7 +24,7 @@ const paths = {
     watch: "src/**/*.pug"
   },
   font: {
-    src: "src/fonts/*", 
+    src: "src/fonts", 
     dist: "dist/assets/fonts"
   },
   img: {
@@ -33,11 +33,11 @@ const paths = {
   },
   scss: {
     src: "src/stylesheets/*.scss",
-    dist: "dist/assets/stylesheets/"
+    dist: "dist/assets/"
   },
   js: {
-    src: "src/scripts/*.js",
-    dist: "dist/assets/scripts"
+    src: "src/scripts",
+    dist: "dist/assets/"
   }
 }
 
@@ -51,6 +51,7 @@ const htmls = () =>
     .pipe(pug({
       //pretty: true
     }))
+    .pipe(pretty())
     .pipe(gulp.dest(paths.html.dist))
 
 //images
@@ -66,31 +67,30 @@ const styles = () =>
     .src(paths.scss.src)
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(autoprefixer({"overrideBrowserslist": ["last 2 versions"]}))
+    // .pipe(minicss())
+    // .pipe(rename({suffix: ".min"}))
     .pipe(gulp.dest(paths.scss.dist))
-
-const minify = () => 
-gulp
-  .src(paths.scss.dist + "styles.css")
-  .pipe(minicss())
-  .pipe(rename({suffix: ".min"}))
-  .pipe(gulp.dest(paths.scss.dist))
 
 //script
 const js = () => 
 gulp
-  .src(paths.js.src)
+  .src([
+    paths.js.src + '/*.js',
+    '!' + paths.js.src + '/_*.js'
+  ])
   .pipe(bro({
     transform: [
       babelify.configure({ presets: ['@babel/preset-env'] }),
       [ 'uglifyify', { global: true } ]
     ]
   }))
+  .pipe(concat('ui.js'))
   .pipe(gulp.dest(paths.js.dist))
 
 //fonts
 const fonts = () =>
   gulp
-    .src(paths.font.src)
+    .src(paths.font.src + '/*.{ttf,woff,woff2}')
     .pipe(gulp.dest(paths.font.dist))
 
 //clean
